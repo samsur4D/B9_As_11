@@ -12,6 +12,7 @@ import Notrfound from './Pages/NotFound/Notrfound.jsx';
 import Login from './Pages/Authentication/Login.jsx';
 import Register from './Pages/Authentication/Register.jsx';
 import AuthProvider from './AuthProvider.jsx';
+import Addjob from './Pages/Addjob.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
        {
         path: "/",
         element: <Home></Home>
+       },
+       {
+        path: "/addjob",
+        element: <Addjob></Addjob>
        },
        {
         path: "/login",

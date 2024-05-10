@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
+import logo from '../assets/icons/logo.svg'
 
 
 
@@ -20,15 +21,23 @@ const Navber = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <h1 className="btn btn-ghost text-4xl font-bold text-white">JOB<span className="text-red-700">SEEKER</span>🔍</h1>
+    {/* <h1 className="btn btn-ghost text-4xl font-bold text-white">JOB<span className="text-red-700">SEEKER</span>🔍</h1> */}
+    <img className="w-24 h-24 ml-5 py-2" src={logo} alt="" />
    
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal gap-3 px-1">
-    <NavLink to="/"><a>Home</a></NavLink>
-       
+    {/* ---------------------------------------- */}
+    <NavLink to="/" href="#_" className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm">
+Home
+</NavLink>
+    {/* ------------------------------------------ */}
+    <NavLink to="/addjob" href="#_" className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm">
+Add Job
+</NavLink>
+       {/* --------------------------------- */}
       
-    <NavLink to="/"><a>Home</a></NavLink>
+ 
        
     </ul>
   </div>
