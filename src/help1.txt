@@ -1,0 +1,222 @@
+[
+  {
+    "Job Title": "Software Engineer",
+    "Job Category": "On Site",
+    "Salary Range": "$70,000 - $90,000",
+    "Job Description": "We are seeking a skilled software engineer to join our team and contribute to the development of our next-generation products.",
+    "Job Posting Date": "2024-05-12",
+    "Application Deadline": "2024-06-12",
+    "Job Applicants Number": 0,
+    "Short Description": "Join our team as a software engineer to work on cutting-edge products.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Software+Engineer"
+  },
+  {
+    "Job Title": "Data Analyst",
+    "Job Category": "Remote",
+    "Salary Range": "$60,000 - $80,000",
+    "Job Description": "We are looking for a data analyst to analyze large datasets and provide insights to drive business decisions.",
+    "Job Posting Date": "2024-05-11",
+    "Application Deadline": "2024-06-11",
+    "Job Applicants Number": 0,
+    "Short Description": "Seeking a data analyst to provide actionable insights for business decisions.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Data+Analyst"
+  },
+  {
+    "Job Title": "Graphic Designer",
+    "Job Category": "Hybrid",
+    "Salary Range": "$50,000 - $70,000",
+    "Job Description": "We are seeking a creative graphic designer to develop engaging and innovative designs for our marketing materials.",
+    "Job Posting Date": "2024-05-10",
+    "Application Deadline": "2024-06-10",
+    "Job Applicants Number": 0,
+    "Short Description": "Creative graphic designer needed to design marketing materials.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Graphic+Designer"
+  },
+  {
+    "Job Title": "Marketing Manager",
+    "Job Category": "On Site",
+    "Salary Range": "$80,000 - $100,000",
+    "Job Description": "We are hiring a marketing manager to develop and implement marketing strategies to promote our products.",
+    "Job Posting Date": "2024-05-09",
+    "Application Deadline": "2024-06-09",
+    "Job Applicants Number": 0,
+    "Short Description": "Join our team as a marketing manager to drive product promotion strategies.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Marketing+Manager"
+  },
+  {
+    "Job Title": "Customer Support Representative",
+    "Job Category": "Remote",
+    "Salary Range": "$40,000 - $60,000",
+    "Job Description": "We are seeking a customer support representative to assist customers with product inquiries and technical issues.",
+    "Job Posting Date": "2024-05-08",
+    "Application Deadline": "2024-06-08",
+    "Job Applicants Number": 0,
+    "Short Description": "Customer support representative needed to assist customers with inquiries.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Customer+Support+Representative"
+  },
+  {
+    "Job Title": "Financial Analyst",
+    "Job Category": "On Site",
+    "Salary Range": "$70,000 - $90,000",
+    "Job Description": "We are looking for a financial analyst to provide financial planning and analysis support to our company.",
+    "Job Posting Date": "2024-05-07",
+    "Application Deadline": "2024-06-07",
+    "Job Applicants Number": 0,
+    "Short Description": "Financial analyst needed to support company financial planning.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Financial+Analyst"
+  },
+  {
+    "Job Title": "Content Writer",
+    "Job Category": "Remote",
+    "Salary Range": "$45,000 - $65,000",
+    "Job Description": "We are hiring a talented content writer to create compelling and informative content for our blog and website.",
+    "Job Posting Date": "2024-05-06",
+    "Application Deadline": "2024-06-06",
+    "Job Applicants Number": 0,
+    "Short Description": "Talented content writer needed to create engaging content.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Content+Writer"
+  },
+  {
+    "Job Title": "HR Manager",
+    "Job Category": "Hybrid",
+    "Salary Range": "$80,000 - $100,000",
+    "Job Description": "We are seeking an experienced HR manager to oversee our human resources department and implement HR policies.",
+    "Job Posting Date": "2024-05-05",
+    "Application Deadline": "2024-06-05",
+    "Job Applicants Number": 0,
+    "Short Description": "Experienced HR manager needed to oversee HR department.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=HR+Manager"
+  },
+  {
+    "Job Title": "Sales Representative",
+    "Job Category": "On Site",
+    "Salary Range": "$50,000 - $70,000",
+    "Job Description": "We are looking for a motivated sales representative to promote and sell our products to potential clients.",
+    "Job Posting Date": "2024-05-04",
+    "Application Deadline": "2024-06-04",
+    "Job Applicants Number": 0,
+    "Short Description": "Motivated sales representative needed to promote products.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Sales+Representative"
+  },
+  {
+    "Job Title": "Web Developer",
+    "Job Category": "Remote",
+    "Salary Range": "$60,000 - $80,000",
+    "Job Description": "We are seeking a skilled web developer to build and maintain websites for our clients.",
+    "Job Posting Date": "2024-05-03",
+    "Application Deadline": "2024-06-03",
+    "Job Applicants Number": 0,
+    "Short Description": "Skilled web developer needed to build and maintain websites.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Web+Developer"
+  },
+  {
+    "Job Title": "Administrative Assistant",
+    "Job Category": "Hybrid",
+    "Salary Range": "$40,000 - $60,000",
+    "Job Description": "We are looking for an organized administrative assistant to provide administrative support to our team.",
+    "Job Posting Date": "2024-05-02",
+    "Application Deadline": "2024-06-02",
+    "Job Applicants Number": 0,
+    "Short Description": "Organized administrative assistant needed to provide support.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Administrative+Assistant"
+  },
+  {
+    "Job Title": "IT Support Specialist",
+    "Job Category": "On Site",
+    "Salary Range": "$50,000 - $70,000",
+    "Job Description": "We are hiring an IT support specialist to provide technical support and assistance to our employees.",
+    "Job Posting Date": "2024-05-01",
+    "Application Deadline": "2024-06-01",
+    "Job Applicants Number": 0,
+    "Short Description": "IT support specialist needed to provide technical assistance.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=IT+Support+Specialist"
+  },
+  {
+    "Job Title": "Social Media Manager",
+    "Job Category": "Remote",
+    "Salary Range": "$55,000 - $75,000",
+    "Job Description": "We are seeking a social media manager to develop and implement social media strategies to increase brand awareness.",
+    "Job Posting Date": "2024-04-30",
+    "Application Deadline": "2024-05-30",
+    "Job Applicants Number": 0,
+    "Short Description": "Social media manager needed to increase brand awareness.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Social+Media+Manager"
+  },
+  {
+    "Job Title": "Quality Assurance Analyst",
+    "Job Category": "On Site",
+    "Salary Range": "$60,000 - $80,000",
+    "Job Description": "We are looking for a quality assurance analyst to ensure the quality and reliability of our products.",
+    "Job Posting Date": "2024-04-29",
+    "Application Deadline": "2024-05-29",
+    "Job Applicants Number": 0,
+    "Short Description": "Quality assurance analyst needed to ensure product quality.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Quality+Assurance+Analyst"
+  },
+  {
+    "Job Title": "UX Designer",
+    "Job Category": "Hybrid",
+    "Salary Range": "$70,000 - $90,000",
+    "Job Description": "We are seeking a UX designer to create intuitive and user-friendly designs for our digital products.",
+    "Job Posting Date": "2024-04-28",
+    "Application Deadline": "2024-05-28",
+    "Job Applicants Number": 0,
+    "Short Description": "UX designer needed to create user-friendly designs.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=UX+Designer"
+  },
+  {
+    "Job Title": "Project Manager",
+    "Job Category": "Remote",
+    "Salary Range": "$80,000 - $100,000",
+    "Job Description": "We are hiring a project manager to oversee and coordinate projects from initiation to completion.",
+    "Job Posting Date": "2024-04-27",
+    "Application Deadline": "2024-05-27",
+    "Job Applicants Number": 0,
+    "Short Description": "Project manager needed to oversee project completion.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Project+Manager"
+  },
+  {
+    "Job Title": "Legal Counsel",
+    "Job Category": "On Site",
+    "Salary Range": "$90,000 - $110,000",
+    "Job Description": "We are seeking a legal counsel to provide legal advice and support to our company on various legal matters.",
+    "Job Posting Date": "2024-04-26",
+    "Application Deadline": "2024-05-26",
+    "Job Applicants Number": 0,
+    "Short Description": "Legal counsel needed to provide legal support.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Legal+Counsel"
+  },
+  {
+    "Job Title": "Network Engineer",
+    "Job Category": "Hybrid",
+    "Salary Range": "$75,000 - $95,000",
+    "Job Description": "We are looking for a network engineer to design, implement, and maintain our network infrastructure.",
+    "Job Posting Date": "2024-04-25",
+    "Application Deadline": "2024-05-25",
+    "Job Applicants Number": 0,
+    "Short Description": "Network engineer needed to maintain network infrastructure.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Network+Engineer"
+  },
+  {
+    "Job Title": "Product Manager",
+    "Job Category": "Remote",
+    "Salary Range": "$90,000 - $110,000",
+    "Job Description": "We are seeking a product manager to develop and execute product strategies to meet customer needs.",
+    "Job Posting Date": "2024-04-24",
+    "Application Deadline": "2024-05-24",
+    "Job Applicants Number": 0,
+    "Short Description": "Product manager needed to execute product strategies.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=Product+Manager"
+  },
+  {
+    "Job Title": "UI Designer",
+    "Job Category": "On Site",
+    "Salary Range": "$65,000 - $85,000",
+    "Job Description": "We are seeking a UI designer to create visually appealing and user-friendly interfaces for our applications.",
+    "Job Posting Date": "2024-04-23",
+    "Application Deadline": "2024-05-23",
+    "Job Applicants Number": 0,
+    "Short Description": "UI designer needed to create appealing interfaces.",
+    "Image Link": "https://via.placeholder.com/500x300.png?text=UI+Designer"
+  }
+]
