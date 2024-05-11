@@ -2,8 +2,9 @@ import React from 'react';
 
 const Hybrid = () => {
     return (
-        <div className='ml-72 mt-5'>
-        <div className="relative bg-gray-200  flex flex-col max-w-2xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-50 dark:text-gray-800 dark:divide-gray-300">
+        <div className='mt-5 '>
+        <h1 className='text-xl'> <span className='text-2xl text-red-500 font-bold'>Only Hybrid jobs</span> are listed below</h1>
+        <div className="relative ml-72 mt-5 rounded-3xl bg-gray-300  flex flex-col max-w-2xl p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-50 dark:text-gray-800 dark:divide-gray-300">
 <div className="p-3 space-y-1">
     <h3 className="text-3xl font-semibold">Lorem ipsum dolor sit amet</h3>
     <p className="text-sm dark:text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam possimus repellat incidunt odit eligendi mollitia quaerat autem nobis fugiat natus?</p>

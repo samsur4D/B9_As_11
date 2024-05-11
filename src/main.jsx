@@ -17,6 +17,7 @@ import Onsite from './Components/Onsite.jsx';
 import Hybrid from './Components/Hybrid.jsx';
 import Remote from './Components/Remote.jsx';
 import Part from './Components/Part.jsx';
+import Alljobs from './Components/Alljobs.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         children: [
           {
-            index: true,
+            index: true ,
+            element: <Alljobs></Alljobs>
+          },
+          {
+            path: "onsite",
             element: <Onsite></Onsite>
           },
           {
@@ -43,7 +48,8 @@ const router = createBrowserRouter([
           {
             path: "partTimejobs",
             element: <Part></Part>
-          }
+          },
+          
         ]
        },
        {
