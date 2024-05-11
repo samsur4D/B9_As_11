@@ -13,6 +13,10 @@ import Login from './Pages/Authentication/Login.jsx';
 import Register from './Pages/Authentication/Register.jsx';
 import AuthProvider from './AuthProvider.jsx';
 import Addjob from './Pages/Addjob.jsx';
+import Onsite from './Components/Onsite.jsx';
+import Hybrid from './Components/Hybrid.jsx';
+import Remote from './Components/Remote.jsx';
+import Part from './Components/Part.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -22,7 +26,25 @@ const router = createBrowserRouter([
     children: [
        {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        children: [
+          {
+            index: true,
+            element: <Onsite></Onsite>
+          },
+          {
+            path: "remoteJobs",
+            element: <Remote></Remote>
+          },
+          {
+            path: "hybridJobs",
+            element: <Hybrid></Hybrid>
+          },
+          {
+            path: "partTimejobs",
+            element: <Part></Part>
+          }
+        ]
        },
        {
         path: "/addjob",
@@ -35,7 +57,8 @@ const router = createBrowserRouter([
        {
         path: "/register",
         element: <Register></Register>
-       }
+       },
+       
     ]
   },
 ]);

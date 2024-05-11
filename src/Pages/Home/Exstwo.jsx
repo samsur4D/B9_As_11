@@ -42,7 +42,7 @@ const Exstwo = () => {
   <figure><img src="https://i.ibb.co/tb8WKt0/shipman-northcutt-sg-ZX15-Da8-YE-unsplash.jpg" alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title bg-purple-400  py-2 px-2 rounded-xl">Jobs</h2>
-    <p>11 awesome fee carrer self  assessments</p>
+    <p>How To start looking for a job ?</p>
     
   </div>
 </div>
@@ -51,7 +51,7 @@ const Exstwo = () => {
   <figure><img src="https://i.ibb.co/RSLSMLC/foto-sushi-6anudmp-ILw4-unsplash.jpg" alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title bg-yellow-400  py-2 px-2 rounded-xl">Resume</h2>
-    <p>11 awesome fee carrer self  assessments</p>
+    <p>Resume samples </p>
     
   </div>
 </div>
@@ -60,7 +60,7 @@ const Exstwo = () => {
   <figure><img src="https://i.ibb.co/xHTpwFR/thisisengineering-TXxi-Fu-QLBKQ-unsplash.jpg" alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title bg-orange-400  py-2 px-2 rounded-xl">Interview</h2>
-    <p>11 awesome fee carrer self  assessments</p>
+    <p>100 top interview questiuons - be prepared</p>
     
   </div>
 </div>
