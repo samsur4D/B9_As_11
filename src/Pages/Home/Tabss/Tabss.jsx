@@ -9,13 +9,13 @@ const [tabIndex , setTabIndex] = useState(0)
 
   return (
     <>
-    <div data-aos="zoom-out-up" className="flex mt-40 items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap  ">
+    <div data-aos="zoom-out-up" className=" flex-col lg:flex mt-60 items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap   ">
     <NavLink 
       to=""
       onClick={() => setTabIndex(0)}
         rel="noopener noreferrer"
         href="#"
-        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? 'border border-black border-b-0' : 'border-b'} rounded-t-lg `}
+        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? 'border border-black border-b-0 bg-gray-200' : 'border-b'} rounded-t-lg `}
       >
       <VscRunAll />
         <span>All Jobs here</span>
@@ -25,7 +25,7 @@ const [tabIndex , setTabIndex] = useState(0)
       onClick={() => setTabIndex(1)}
         rel="noopener noreferrer"
         href="#"
-        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? 'border border-black border-b-0' : 'border-b'} rounded-t-lg `}
+        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? 'border border-black border-b-0 bg-gray-200' : 'border-b '} rounded-t-lg `}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ const [tabIndex , setTabIndex] = useState(0)
       onClick={() => setTabIndex(2)}
         rel="noopener noreferrer"
         href="#"
-        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 2 ? 'border border-black border-b-0' : 'border-b'} rounded-t-lg `}
+        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 2 ? 'border border-black border-b-0 bg-gray-200' : 'border-b'} rounded-t-lg `}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const [tabIndex , setTabIndex] = useState(0)
       onClick={() => setTabIndex(3)}
         rel="noopener noreferrer"
         href="#"
-        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 3 ? 'border border-black border-b-0' : 'border-b'} rounded-t-lg `}
+        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 3 ? 'border border-black border-b-0 bg-gray-200' : 'border-b'} rounded-t-lg `}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ const [tabIndex , setTabIndex] = useState(0)
       onClick={() => setTabIndex(4)}
         rel="noopener noreferrer"
         href="#"
-        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 4 ? 'border border-black border-b-0' : 'border-b'} rounded-t-lg `}
+        className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 4 ? 'border border-black border-b-0 bg-gray-200' : 'border-b'} rounded-t-lg `}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

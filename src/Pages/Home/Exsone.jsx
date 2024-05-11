@@ -23,7 +23,7 @@ const Exsone = () => {
       {/* --------------------------------------------------------------- */}
       <div 
        data-aos="flip-up"
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 mb-32">
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 mb-32 gap-2">
         <div className="card w-60 bg-black rounded-full ">
           <div className="card-body">
             <h2 className="card-title text-white flex text-center items-center justify-center">
