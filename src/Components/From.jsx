@@ -62,15 +62,18 @@ const From = () => {
                         <label htmlFor="address" className="text-sm text-red-600">Application Deadline</label>
                         <input id="address" type="text" placeholder="" className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 " />
                     </div>
+                {/* <div className="col-span-full">
+                        <label htmlFor="address" className="text-sm text-red-600">Application Deadline</label>
+                        <input id="address" type="text" placeholder="" className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 " />
+                    </div> */}
+                 
+                 <a href="#_" className="relative  inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group">
+<span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
+<span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+<span className="relative">Add Job</span>
+</a>
                     {/* === */}
                  
-                    {/* <div className="col-span-full">
-                        <label htmlFor="bio" className="text-sm">Photo</label>
-                        <div className="flex items-center space-x-2">
-                            <img src="https://source.unsplash.com/30x30/?random" alt="" className="w-10 h-10  rounded-full d" />
-                            <button type="button" className="px-4 py-2 border rounded-md ">Change</button>
-                        </div>
-                    </div> */}
                 </div>
             </fieldset>
         </form>

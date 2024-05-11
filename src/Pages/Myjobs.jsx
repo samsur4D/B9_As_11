@@ -1,43 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import From from '../Components/From';
+import Myjcard from '../Components/Myjcard';
 import HashLoader from "react-spinners/HashLoader";
 
-const Addjob = () => {
-      
+const Myjobs = () => {
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
-        document.title = 'Job_Seeker/AddJob';
+        document.title = 'Job_seeker/Myjobs';
         return () => {
           document.title = 'Title';
         };
       }, []);
-
-
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
+      useEffect(() => {
         setTimeout( ( ) => {
         setLoading(false)
        }, 2000)
   }, [ ] )
 
+
     return (
-        <div>
+        <div className='mb-10'>
+            <h1 data-aos="flip-up" className='text-7xl font-bold'>My Jobs Are Here</h1>
+            {/* ------------- */}
             {
              loading    &&  
               <div className="sweet-loading flex items-center justify-center h-96">
                        <HashLoader color={'#F2AE02'} size={65} />
               </div>
          }
+         
 
-{
-                  ! loading && <From></From>
+       {
+                  ! loading &&  <Myjcard></Myjcard>
         }
 
 
-            
-            
+
+        
+            {/* ------------- */}
         </div>
     );
 };
 
-export default Addjob;
+export default Myjobs;

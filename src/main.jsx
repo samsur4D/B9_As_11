@@ -18,6 +18,8 @@ import Hybrid from './Components/Hybrid.jsx';
 import Remote from './Components/Remote.jsx';
 import Part from './Components/Part.jsx';
 import Alljobs from './Components/Alljobs.jsx';
+import Jobsall from './Pages/Jobsall.jsx';
+import Myjobs from './Pages/Myjobs.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -55,6 +57,14 @@ const router = createBrowserRouter([
        {
         path: "/addjob",
         element: <Addjob></Addjob>
+       },
+       {
+        path: "/alljobs",
+        element: <Jobsall></Jobsall>
+       },
+       {
+        path: "/myjobs",
+        element: <Myjobs></Myjobs>,
        },
        {
         path: "/login",

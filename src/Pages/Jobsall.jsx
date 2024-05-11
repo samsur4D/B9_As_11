@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import From from '../Components/From';
+import Table from '../Components/Table';
 import HashLoader from "react-spinners/HashLoader";
 
-const Addjob = () => {
-      
-    useEffect(() => {
-        document.title = 'Job_Seeker/AddJob';
-        return () => {
-          document.title = 'Title';
-        };
-      }, []);
-
-
+const Jobsall = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -22,7 +13,8 @@ const Addjob = () => {
 
     return (
         <div>
-            {
+
+{
              loading    &&  
               <div className="sweet-loading flex items-center justify-center h-96">
                        <HashLoader color={'#F2AE02'} size={65} />
@@ -30,14 +22,13 @@ const Addjob = () => {
          }
 
 {
-                  ! loading && <From></From>
+                  ! loading &&   <Table></Table>
         }
 
 
-            
-            
+           
         </div>
     );
 };
 
-export default Addjob;
+export default Jobsall;
