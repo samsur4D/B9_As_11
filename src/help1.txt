@@ -1,6 +1,7 @@
 [
   {
     "Job Title": "Software Engineer",
+    "Company Name": "Tech Innovations Inc.",
     "Job Category": "On Site",
     "Salary Range": "$70,000 - $90,000",
     "Job Description": "We are seeking a skilled software engineer to join our team and contribute to the development of our next-generation products.",
@@ -12,6 +13,7 @@
   },
   {
     "Job Title": "Data Analyst",
+    "Company Name": "Data Insights Co.",
     "Job Category": "Remote",
     "Salary Range": "$60,000 - $80,000",
     "Job Description": "We are looking for a data analyst to analyze large datasets and provide insights to drive business decisions.",
@@ -23,6 +25,7 @@
   },
   {
     "Job Title": "Graphic Designer",
+    "Company Name": "Creative Designs Co.",
     "Job Category": "Hybrid",
     "Salary Range": "$50,000 - $70,000",
     "Job Description": "We are seeking a creative graphic designer to develop engaging and innovative designs for our marketing materials.",
@@ -34,6 +37,7 @@
   },
   {
     "Job Title": "Marketing Manager",
+    "Company Name": "Promo Solutions Ltd.",
     "Job Category": "On Site",
     "Salary Range": "$80,000 - $100,000",
     "Job Description": "We are hiring a marketing manager to develop and implement marketing strategies to promote our products.",
@@ -45,6 +49,7 @@
   },
   {
     "Job Title": "Customer Support Representative",
+    "Company Name": "Supportive Services Inc.",
     "Job Category": "Remote",
     "Salary Range": "$40,000 - $60,000",
     "Job Description": "We are seeking a customer support representative to assist customers with product inquiries and technical issues.",
@@ -56,6 +61,7 @@
   },
   {
     "Job Title": "Financial Analyst",
+    "Company Name": "Financial Insights Ltd.",
     "Job Category": "On Site",
     "Salary Range": "$70,000 - $90,000",
     "Job Description": "We are looking for a financial analyst to provide financial planning and analysis support to our company.",
@@ -67,6 +73,7 @@
   },
   {
     "Job Title": "Content Writer",
+    "Company Name": "Content Creations Co.",
     "Job Category": "Remote",
     "Salary Range": "$45,000 - $65,000",
     "Job Description": "We are hiring a talented content writer to create compelling and informative content for our blog and website.",
@@ -78,6 +85,7 @@
   },
   {
     "Job Title": "HR Manager",
+    "Company Name": "HR Solutions Inc.",
     "Job Category": "Hybrid",
     "Salary Range": "$80,000 - $100,000",
     "Job Description": "We are seeking an experienced HR manager to oversee our human resources department and implement HR policies.",
@@ -89,6 +97,7 @@
   },
   {
     "Job Title": "Sales Representative",
+    "Company Name": "Sales Solutions Ltd.",
     "Job Category": "On Site",
     "Salary Range": "$50,000 - $70,000",
     "Job Description": "We are looking for a motivated sales representative to promote and sell our products to potential clients.",
@@ -100,6 +109,7 @@
   },
   {
     "Job Title": "Web Developer",
+    "Company Name": "Web Solutions Co.",
     "Job Category": "Remote",
     "Salary Range": "$60,000 - $80,000",
     "Job Description": "We are seeking a skilled web developer to build and maintain websites for our clients.",
@@ -111,6 +121,7 @@
   },
   {
     "Job Title": "Administrative Assistant",
+    "Company Name": "Admin Solutions Inc.",
     "Job Category": "Hybrid",
     "Salary Range": "$40,000 - $60,000",
     "Job Description": "We are looking for an organized administrative assistant to provide administrative support to our team.",
@@ -122,6 +133,7 @@
   },
   {
     "Job Title": "IT Support Specialist",
+    "Company Name": "IT Solutions Ltd.",
     "Job Category": "On Site",
     "Salary Range": "$50,000 - $70,000",
     "Job Description": "We are hiring an IT support specialist to provide technical support and assistance to our employees.",
@@ -133,6 +145,7 @@
   },
   {
     "Job Title": "Social Media Manager",
+    "Company Name": "Social Solutions Co.",
     "Job Category": "Remote",
     "Salary Range": "$55,000 - $75,000",
     "Job Description": "We are seeking a social media manager to develop and implement social media strategies to increase brand awareness.",
@@ -144,6 +157,7 @@
   },
   {
     "Job Title": "Quality Assurance Analyst",
+    "Company Name": "Quality Solutions Inc.",
     "Job Category": "On Site",
     "Salary Range": "$60,000 - $80,000",
     "Job Description": "We are looking for a quality assurance analyst to ensure the quality and reliability of our products.",
@@ -155,6 +169,7 @@
   },
   {
     "Job Title": "UX Designer",
+    "Company Name": "UX Innovations Co.",
     "Job Category": "Hybrid",
     "Salary Range": "$70,000 - $90,000",
     "Job Description": "We are seeking a UX designer to create intuitive and user-friendly designs for our digital products.",
@@ -166,6 +181,7 @@
   },
   {
     "Job Title": "Project Manager",
+    "Company Name": "Project Solutions Ltd.",
     "Job Category": "Remote",
     "Salary Range": "$80,000 - $100,000",
     "Job Description": "We are hiring a project manager to oversee and coordinate projects from initiation to completion.",
@@ -177,6 +193,7 @@
   },
   {
     "Job Title": "Legal Counsel",
+    "Company Name": "Legal Solutions Inc.",
     "Job Category": "On Site",
     "Salary Range": "$90,000 - $110,000",
     "Job Description": "We are seeking a legal counsel to provide legal advice and support to our company on various legal matters.",
@@ -188,6 +205,7 @@
   },
   {
     "Job Title": "Network Engineer",
+    "Company Name": "Network Solutions Ltd.",
     "Job Category": "Hybrid",
     "Salary Range": "$75,000 - $95,000",
     "Job Description": "We are looking for a network engineer to design, implement, and maintain our network infrastructure.",
@@ -199,6 +217,7 @@
   },
   {
     "Job Title": "Product Manager",
+    "Company Name": "Product Innovations Co.",
     "Job Category": "Remote",
     "Salary Range": "$90,000 - $110,000",
     "Job Description": "We are seeking a product manager to develop and execute product strategies to meet customer needs.",
@@ -210,6 +229,7 @@
   },
   {
     "Job Title": "UI Designer",
+    "Company Name": "UI Innovations Co.",
     "Job Category": "On Site",
     "Salary Range": "$65,000 - $85,000",
     "Job Description": "We are seeking a UI designer to create visually appealing and user-friendly interfaces for our applications.",

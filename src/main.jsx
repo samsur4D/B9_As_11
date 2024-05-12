@@ -20,6 +20,8 @@ import Part from './Components/Part.jsx';
 import Alljobs from './Components/Alljobs.jsx';
 import Jobsall from './Pages/Jobsall.jsx';
 import Myjobs from './Pages/Myjobs.jsx';
+import Details from './Pages/Details.jsx';
+import Applied from './Pages/Applied.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true ,
-            element: <Alljobs></Alljobs>
+            element: <Alljobs></Alljobs>,
           },
           {
             path: "onsite",
@@ -60,7 +62,15 @@ const router = createBrowserRouter([
        },
        {
         path: "/alljobs",
-        element: <Jobsall></Jobsall>
+        element: <Jobsall></Jobsall>,
+       },
+       {
+        path: "/details",
+        element: <Details></Details>
+       },
+       {
+        path: "/applied",
+        element: <Applied></Applied>
        },
        {
         path: "/myjobs",

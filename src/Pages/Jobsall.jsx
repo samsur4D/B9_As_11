@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Table from '../Components/Table';
 import HashLoader from "react-spinners/HashLoader";
+import { useLoaderData } from 'react-router-dom';
 
 const Jobsall = () => {
     const [loading, setLoading] = useState(true);
+    
 
     useEffect(() => {
         setTimeout( ( ) => {
