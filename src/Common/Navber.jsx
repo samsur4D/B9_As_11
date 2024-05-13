@@ -52,13 +52,23 @@ const Navber = () => {
             <NavLink to="/">
               <a>Home</a>
             </NavLink>
+            <NavLink to="/alljobs">
+              <a>ALL Job</a>
+            </NavLink>
             <NavLink to="/addjob">
-              <a>AddJob</a>
+              <a>Add Job</a>
+            </NavLink>
+            <NavLink to="/myjobs">
+              <a>My Jobs</a>
+            </NavLink>
+            <NavLink to="/blogs">
+              <a>Blogs</a>
+            </NavLink>
+            <NavLink >
+              <button  onClick={() => logOut()}>Logout</button>
             </NavLink>
 
-            <li>
-              <a>Item 3</a>
-            </li>
+         
           </ul>
         </div>
 
@@ -103,6 +113,14 @@ const Navber = () => {
             className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
           >
             My Jobs
+          </NavLink>
+           {/* ------------------------------------ */}
+           <NavLink
+            to="/blogs"
+            href="#_"
+            className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
+          >
+           Blogs
           </NavLink>
           {/* ----------------------------------- */}
         </ul>
@@ -194,7 +212,7 @@ const Navber = () => {
             />{" "}
             <NavLink
               href="#_"
-              className="relative px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group"
+              className="relative hidden lg:block px-5 py-3 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group"
             >
               <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
               <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>

@@ -4,6 +4,7 @@ import Exstwo from './Exstwo';
 import Exsone from './Exsone';
 import Exsthree from './Exsthree';
 import Tabss from './Tabss/Tabss';
+import Exsfour from './Exsfour';
 
 const Home = () => {
     useEffect(() => {
@@ -15,6 +16,8 @@ const Home = () => {
 
     return (
         <div className=''>
+       
+       
             
             <Slider></Slider>
 
@@ -26,6 +29,8 @@ const Home = () => {
             <Exsone></Exsone>
 
             <Exsthree></Exsthree>
+
+            <Exsfour></Exsfour>
             
         </div>
     );

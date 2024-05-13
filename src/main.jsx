@@ -22,6 +22,10 @@ import Jobsall from './Pages/Jobsall.jsx';
 import Myjobs from './Pages/Myjobs.jsx';
 import Details from './Pages/Details.jsx';
 import Applied from './Pages/Applied.jsx';
+import Blogs from './Pages/Blogs.jsx';
+import BlogSection from './Components/BlogSection.jsx';
+import BlogSection2 from './Components/BlogSection2.jsx';
+import BlogSection3 from './Components/BlogSection3.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -65,7 +69,7 @@ const router = createBrowserRouter([
         element: <Jobsall></Jobsall>,
        },
        {
-        path: "/details",
+        path: "/details/:id",
         element: <Details></Details>
        },
        {
@@ -75,6 +79,22 @@ const router = createBrowserRouter([
        {
         path: "/myjobs",
         element: <Myjobs></Myjobs>,
+       },
+       {
+        path: "/blogs",
+        element: <Blogs></Blogs>
+       },
+       {
+         path: "/blogsection",
+         element: <BlogSection></BlogSection>
+       },
+       {
+        path: "/blogsectionii",
+         element: <BlogSection2></BlogSection2>
+       },
+       {
+        path: "/blogsectioniii",
+         element: <BlogSection3></BlogSection3>
        },
        {
         path: "/login",

@@ -1,36 +1,123 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const Details = () => {
-    return (
-        <article data-aos="zoom-in-down" className="max-w-2xl px-6 py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900">
-	<div className="w-full mx-auto space-y-4 text-center">
-		<p className="text-xs font-semibold tracking-wider uppercase">#TailwindCSS</p>
-		<h1 className="text-4xl font-bold leading-tight md:text-5xl">Interdum et malesuada fames ac ante ipsum primis in faucibus?</h1>
-		<p className="text-sm dark:text-gray-600">by
-			<a rel="noopener noreferrer" href="#" target="_blank" className="underline dark:text-violet-600">
-				<span itemprop="name">Leroy Jenkins</span>
-			</a>on
-			<time datetime="2021-02-12 15:34:18-0200">Feb 12th 2021</time>
-		</p>
-	</div>
-	<div className="">
-		<p>Insert the actual text content here...</p>
-	</div>
-	<div className="pt-12 border-t ">
-		<div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-			<img src="https://source.unsplash.com/75x75/?portrait" alt="" className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 " />
-			<div className="flex flex-col">
-				<h4 className="text-lg font-semibold">Leroy Jenkins</h4>
-				<p className="dark:text-gray-600">Sed non nibh iaculis, posuere diam vitae, consectetur neque. Integer velit ligula, semper sed nisl in, cursus commodo elit. Pellentesque sit amet mi luctus ligula euismod lobortis ultricies et nibh.</p>
-			</div>
-		</div>
-		<div className="flex justify-center pt-4 space-x-4 align-center">
-      <NavLink to="/applied">  <button className="btn btn-block bg-[#1B9CFC]">Applied Job </button>  </NavLink>
-		</div>
-	</div>
-</article>
-    );
+  const { id } = useParams();
+  const [details, setDetails] = useState([]);
+
+  const singleData = details.find((detail) => detail._id === id);
+  console.log(singleData);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/job")
+      .then((res) => res.json())
+      .then((data) => {
+        setDetails(data);
+        console.log(data);
+      });
+  }, []);
+
+  return (
+    <>
+      {singleData && (
+        <article
+          data-aos="zoom-in-down"
+          className="max-w-2xl px-6 py-24 mx-auto space-y-12 dark:bg-gray-100 dark:text-gray-900"
+        >
+          <div className="w-full mx-auto space-y-4 text-center">
+            <p></p>
+            <p className=" underline font-semibold tracking-wider uppercase text-2xl">
+              {singleData.company}
+            </p>
+            <img
+              className="flex items-center justify-center ml-20 rounded-3xl border border-black"
+              src={singleData.photourl}
+              alt=""
+            />
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
+              {singleData.description}
+            </h1>
+            <p className="text-2xl font-semibold">
+              Salary Range : ${singleData.salary}
+            </p>
+            <p className="text-xl font-semibold">
+              Job Category : {singleData.category}
+            </p>
+          </div>
+          <div className="flex items-center justify-center gap-5">
+            <p>
+              Applicants Number <br /> {singleData.applicants}
+            </p>
+            <p>
+              Job Title <br /> {singleData.title}
+            </p>
+            <p className="text-red-600 animate-bounce">
+              Application Deadline <br /> {singleData.deadline}
+            </p>
+          </div>
+          <div>
+            <NavLink to="/applied">
+              {" "}
+              <button
+                data-aos="fade-right"
+                className="btn btn-wide bg-blue-400 font-bold mt-5"
+              >
+                Do you want to apply now ?{" "}
+              </button>
+            </NavLink>
+            <NavLink to="/applied">
+              {" "}
+              <button
+                data-aos="fade-left"
+                className="btn btn-wide bg-blue-600 text-white font-bold mt-5"
+              >
+                If you want , click here{" "}
+              </button>
+            </NavLink>
+          </div>
+        </article>
+      )}
+      <div
+        data-aos="zoom-in-up"
+        className="hero min-h-screen"
+        style={{
+          backgroundImage:
+            "url(https://i.ibb.co/prXGCb2/clem-onojeghuo-f-Y8-Jr4iu-PQM-unsplash-1.jpg)",
+        }}
+      >
+        <div className="hero-overlay bg-opacity-70"></div>
+        <div className="hero-content text-center text-white h-full">
+          <div className="max-w-md">
+            <h1 className="mb-5 text-5xl font-bold">
+              Hire character. Train skill.
+            </h1>
+            <p className="mb-5 font-bold">
+              "You don't build a business; you build people, and then people
+              build the business." - Zig Ziglar
+            </p>
+            <span
+              className="text-3xl mb-5 mt-2  flex items-center justify-center"
+              style={{ color: "white", fontWeight: "bold" }}
+            >
+              <Typewriter
+                words={[
+                  '"Don’t hire for skills, hire for attitude. You can always teach skills."',
+                ]}
+                loop={20}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+            <NavLink to=""></NavLink>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Details;
