@@ -1,66 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import logoss from "../assets/icons/logo.svg";
 import Swal from 'sweetalert2';
 
-const From = () => {
+const Form = () => {
+  const [deadline, setDeadline] = useState(new Date());
 
-const handelAddJob = (e) =>{
-   e.preventDefault();
-   const form = e.target;
-   const title =form.title.value;
-   const category = form.category.value;
-   const company = form.company.value;
-   const name =form.name.value;
-   const email =form.email.value;
-   const description =form.description.value;
-   const salary =form.salary.value;
-   const date =form.date.value;
-   const applicants =form.applicants.value;
-   const photourl =form.photourl.value;
-   const deadline =form.deadline.value;
+  const handleAddJob = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const category = form.category.value;
+    const company = form.company.value;
+    const name = form.name.value;
+    const email = form.email.value;
+    const description = form.description.value;
+    const salary = form.salary.value;
+    const date = form.date.value;
+    const applicants = form.applicants.value;
+    const photourl = form.photourl.value;
 
-   const newJob =  {title,category, company , name,email,description,salary,date,applicants,photourl,deadline}
-   console.log(newJob);
-//    send data to the server
-       fetch('http://localhost:5000/job' , {
-        method: 'POST',
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body: JSON.stringify(newJob)
-       })
-       .then(res => res.json())
-       .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    icon: "success",
-                    title: "Your Job is Added in our teritory",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-            }
-       })
-}
-
-
+    const newJob = { title, category, company, name, email, description, salary, date, applicants, photourl, deadline }
+    console.log(newJob);
+    //    send data to the server
+    fetch('http://localhost:5000/job', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newJob)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Your Job is Added in our territory",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      })
+  }
 
   return (
-    <section className="p-6 bg-gray-200  rounded-lg mb-5  ">
-        <h1 data-aos="fade-up" className="ml-0 lg:ml-40 font-bold text-4xl mb-3 md:mb-4 lg:mb-5 underline">Add Any Job in Our Teritory</h1>
+    <section className="p-6 bg-gray-200 rounded-lg mb-5">
+      <h1 data-aos="fade-up" className="ml-0 lg:ml-40 font-bold text-4xl mb-3 md:mb-4 lg:mb-5 underline">Add Any Job in Our Territory</h1>
       <form
-      onSubmit={handelAddJob}
+        onSubmit={handleAddJob}
         noValidate=""
         action=""
         className="container flex flex-col mx-auto space-y-12"
       >
         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shad">
           <div className="space-y-2 col-span-full lg:col-span-1">
-           
             <img src={logoss} className="mt-5" alt="" />
           </div>
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-            <div className="col-span-full sm:col-span-3">
+          <div className="col-span-full sm:col-span-3">
               <label htmlFor="firstname" className="text-sm">
                 Job Title
               </label>
@@ -177,7 +176,7 @@ const handelAddJob = (e) =>{
             {/* --------- */}
           </div>
         </fieldset>
-        <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm ">
+        {/* <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm ">
           <div className="space-y-2 col-span-full lg:col-span-1">
             <p className=" text-2xl font-bold">Job Seeker</p>
             <p className="text-xl text-red-700 animate-pulse">
@@ -202,8 +201,31 @@ const handelAddJob = (e) =>{
               value="Add Job"
               className="w-full bg-black px-20 lg:px-96 py-3  text-white font-bold rounded-xl"
             />
-
-            {/* === */}
+          </div>
+        </fieldset> */}
+        <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm">
+          <div className="space-y-2 col-span-full lg:col-span-1">
+            <p className="text-2xl font-bold">Job Seeker</p>
+            <p className="text-xl text-red-700 animate-pulse">
+              "Where careers take flight"
+            </p>
+          </div>
+          <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+            <div className="col-span-full">
+              <label htmlFor="deadline" className="text-2xl underline text-red-600">Application Deadline</label>
+              <br />
+              <DatePicker
+                selected={deadline}
+                dateFormat='yyyy/MM/dd'
+                onChange={(date) => setDeadline(date)}
+                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600"
+              />
+            </div>
+            <input
+              type="submit"
+              value="Add Job"
+              className="w-full bg-black px-20 lg:px-96 py-3 text-white font-bold rounded-xl"
+            />
           </div>
         </fieldset>
       </form>
@@ -211,4 +233,4 @@ const handelAddJob = (e) =>{
   );
 };
 
-export default From;
+export default Form;

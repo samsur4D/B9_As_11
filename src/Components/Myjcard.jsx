@@ -13,7 +13,7 @@ const Myjcard = () => {
 	</div>
 	<div className="flex items-center  gap-3 p-3">
 		
-		<div className=" space-y-1">
+		<div className=" space-y-1 ml-0 md:ml-24 lg:ml-0">
 			<div className='flex flex-col'>
             <span className="text-lg font-semibold">Job is posted by <span className='underline'>samsur rahman</span></span>
             <span className="text-2xl font-semibold">Job Posting Date : April 03, 2021</span>
@@ -22,8 +22,10 @@ const Myjcard = () => {
 		</div>
       
 	</div>
-     
-</div>
+	<button className=' px-4 py-4 md:px-4 md:py-4 lg:px-2 lg:py-0 underline text-blue-600 font-semibold  rounded-2xl'>View Details</button>
+    
+                        </div>
+
         </div>
     );
 };

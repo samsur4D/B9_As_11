@@ -49,7 +49,7 @@ const handelRegister = (e) =>{
 	//   }
 	
 	  setError("")
-	 registerUser(email,password)
+	 registerUser( email,password )
 	 .then(result =>{
 		setUser(result.user)
 		Swal.fire({
@@ -81,7 +81,7 @@ const handelRegister = (e) =>{
             </label>
             <input
               id="name"
-			  name="name"
+			       name="name"
               type="text"
               placeholder="User Name"
               className="rounded-t-md bg-gray-100 h-20    focus:dark:ring-violet-600 focus:dark:border-violet-600 focus:ring-2"

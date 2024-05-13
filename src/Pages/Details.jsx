@@ -5,6 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 const Details = () => {
   const { id } = useParams();
   const [details, setDetails] = useState([]);
+  const [job, setJob] = useState([]);
 
   const singleData = details.find((detail) => detail._id === id);
   console.log(singleData);
@@ -52,7 +53,7 @@ const Details = () => {
             <p>
               Job Title <br /> {singleData.title}
             </p>
-            <p className="text-red-600 animate-bounce">
+            <p className="text-red-600 ">
               Application Deadline <br /> {singleData.deadline}
             </p>
           </div>
@@ -66,20 +67,20 @@ const Details = () => {
                 Do you want to apply now ?{" "}
               </button>
             </NavLink>
-            <NavLink to="/applied">
+            <NavLink to={`/applied/${id}`}>
               {" "}
               <button
                 data-aos="fade-left"
-                className="btn btn-wide bg-blue-600 text-white font-bold mt-5"
+                className="btn btn-wide bg-blue-600 text-white font-bold mt-5 "
               >
-                If you want , click here{" "}
+                If you want ,<span className="animate-bounce underline text-red-400"> click here</span>{" "}
               </button>
             </NavLink>
           </div>
         </article>
       )}
       <div
-        data-aos="zoom-in-up"
+        // data-aos="zoom-in-up"
         className="hero min-h-screen"
         style={{
           backgroundImage:

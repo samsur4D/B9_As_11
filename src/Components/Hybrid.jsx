@@ -1,30 +1,78 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { RiseLoader } from 'react-spinners';
 
 const Hybrid = () => {
+	const [hybridJobs , setHybridJobs] = useState([])
+	const [loading, setLoading] = useState(true);
+
+
+
+
+useEffect(() => {
+         setTimeout( ( ) => {
+         setLoading(false)
+        }, 2000)
+   }, [ ] )
+
+	useEffect(() => {
+		fetch("http://localhost:5000/job")
+		  .then((res) => res.json())
+		  .then((data) => {
+		const hybridJobsData = data.filter(job => job.category === 'Hybrid')
+		setHybridJobs(hybridJobsData)
+			console.log(data);
+		  });
+	  }, []);
+  
+
     return (
         <div className='mt-5 '>
-        <h1 className='text-xl'> <span className='text-4xl text-green-500 font-bold'>Only Hybrid jobs</span> are listed below</h1>
-        <div className="relative  mt-5 rounded-3xl bg-gray-300  flex flex-col justify-between  p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-50 dark:text-gray-800 dark:divide-gray-300">
-	<div className="p-0 md:p-1 lg:p-3 space-y-1">
-		<h3 className="text-3xl font-semibold">Job Title</h3>
-		<h3 className="text-md font-semibold">salary range</h3>
-		<h3 className="text-md font-semibold">Job Posting Date</h3>
-		<h3 className="text-md font-semibold">Applicants Number</h3>
-		
-	</div>
-	<div className="flex items-center  gap-3 p-3">
-		
-		<div className=" space-y-1">
-			<div className='flex flex-col'>
-            <span className="text-lg font-semibold">Job is posted by <span className='underline'>samsur rahman</span></span>
-            <span className="text-2xl font-semibold">Job Posting Date : April 03, 2021</span>
-			<span className="text-2xl text-red-500 font-bold underline">Application Deadline : April 03, 2021</span>
-            </div>
-		</div>
-      
-	</div>
-     
-</div>
+        <h1 className='text-xl'> <span className='text-5xl text-black font-bold'>Only "Hybrid" jobs</span> are listed below</h1>
+     {/* --- */}
+	 {
+             loading    &&  
+              <div className="sweet-loading flex items-center justify-center h-96">
+                     
+                        <RiseLoader color={'#F2AE02'} size={20} />
+ 
+              </div>
+         }
+
+
+{
+                  ! loading && <div>  {
+					hybridJobs.map((job)=>(
+					   <div key={job._id} className="relative  mt-5 rounded-3xl bg-[#ffeaa7]  flex flex-col justify-between  p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-50 dark:text-gray-800 dark:divide-gray-300">
+					   <div className="p-0 md:p-1 lg:p-3 space-y-1">
+						   <h3 className="text-3xl font-semibold">{job.title}</h3>
+						   <h3 className="text-md font-semibold">salary ${job.salary}</h3>
+						   <h3 className="text-md font-semibold">Job Category : "{job.category} Job"</h3>
+						   <h3 className="text-md font-semibold">Applicants Number : {job.applicants}</h3>
+						   
+					   </div>
+					   <div className="flex items-center  gap-3 p-3">
+						   
+						   <div className=" space-y-1 ml-0 md:ml-24 lg:ml-0">
+							   <div className='flex flex-col'>
+							   <span className="text-lg font-semibold">Job is posted by <span className='underline'>{job.name}</span></span>
+							   <span className="text-2xl font-semibold">Job Posting Date : {job.date}</span>
+							   <span className="text-2xl text-red-500 font-bold underline">Application Deadline : {job.deadline}</span>
+							   </div>
+						   </div>
+						 
+					   </div>
+					   <NavLink to={`/details/${job._id}`}><button className=' px-4 py-4 md:px-4 md:py-4 lg:px-2 lg:py-0 lg:mt-16 underline text-blue-600 font-semibold  rounded-2xl'>View Details</button> </NavLink>
+					   
+										   </div>
+					))
+				  }</div>
+        }
+
+
+
+	  
+	 {/* ---- */}
     </div>
     );
 };

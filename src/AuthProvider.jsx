@@ -49,7 +49,7 @@ const logOut = () =>{
    useEffect(()=>{
     const unsubscribe =  onAuthStateChanged(auth, (currentuser) => {
         if (currentuser) {
-            console.log(currentuser)
+            // console.log(currentuser)
           setUser(currentuser)
         } else {
           setUser(null)

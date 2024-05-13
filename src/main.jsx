@@ -26,6 +26,7 @@ import Blogs from './Pages/Blogs.jsx';
 import BlogSection from './Components/BlogSection.jsx';
 import BlogSection2 from './Components/BlogSection2.jsx';
 import BlogSection3 from './Components/BlogSection3.jsx';
+import Appliedjobs from './Pages/Appliedjobs.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -69,12 +70,17 @@ const router = createBrowserRouter([
         element: <Jobsall></Jobsall>,
        },
        {
+        path: "/appliedjobs",
+        element: <Appliedjobs></Appliedjobs>
+       },
+       {
         path: "/details/:id",
         element: <Details></Details>
        },
        {
-        path: "/applied",
-        element: <Applied></Applied>
+        path: "/applied/:id",
+        element: <Applied></Applied>,
+       loader: ({params})=> fetch(`http://localhost:5000/job/${params.id}`)
        },
        {
         path: "/myjobs",

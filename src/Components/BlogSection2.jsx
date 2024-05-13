@@ -20,19 +20,19 @@ function BlogSection2() {
       {!loading && (
         <div>
           <h2 className="text-4xl font-bold mb-3">Express.js:</h2>
-          <p>
+          <p className="text-2xl font-semibold mb-3">
             Express.js is one of the most popular web application frameworks for
             Node.js. Here are some key points about Express.js:
           </p>
           <ul className="mb-5">
             <li>
-              <strong className="text-xl">Minimalistic:</strong> Express.js is
+              <strong className="text-xl">Minimalistic:</strong> <br /> Express.js is
               minimalistic and unopinionated, meaning it provides a basic set of
               features for web application development but allows developers the
               flexibility to add additional features as needed.
             </li>
             <li>
-              <strong className="text-xl">Middleware:</strong> Express.js uses
+              <strong className="text-xl">Middleware:</strong> <br /> Express.js uses
               middleware functions to handle requests. Middleware functions are
               functions that have access to the request object (req), the
               response object (res), and the next middleware function in the
@@ -40,13 +40,13 @@ function BlogSection2() {
               approach to handling requests.
             </li>
             <li>
-              <strong className="text-xl">Routing:</strong> Express.js provides
+              <strong className="text-xl">Routing:</strong> <br /> Express.js provides
               a simple and intuitive way to define routes for handling different
               HTTP requests (GET, POST, PUT, DELETE, etc.). Routes are defined
               using HTTP methods and URL patterns.
             </li>
             <li>
-              <strong className="text-xl">Template engines:</strong> Express.js
+              <strong className="text-xl">Template engines:</strong> <br /> Express.js
               supports various template engines like EJS, Pug, Handlebars, etc.,
               allowing developers to generate HTML dynamically.
             </li>
@@ -62,7 +62,7 @@ function BlogSection2() {
             </li>
           </ul>
           <img
-            data-aos="fade-right"
+            
             className="w-3/5 ml-20 lg:ml-72"
             src="https://i.ibb.co/WxrJbV5/1692105615355.jpg"
             alt=""
@@ -76,14 +76,14 @@ function BlogSection2() {
           </p>
           <ul>
             <li>
-              <strong className="text-xl">Modular architecture:</strong> NestJS
+              <strong className="text-xl">Modular architecture:</strong> <br /> NestJS
               encourages a modular architecture by using modules. Modules are a
               way to organize the application into cohesive blocks of
               functionality. Each module can encapsulate controllers, services,
               and other related components.
             </li>
             <li>
-              <strong className="text-xl">Dependency injection:</strong> NestJS
+              <strong className="text-xl">Dependency injection:</strong> <br /> NestJS
               uses dependency injection to manage the creation and sharing of
               application components. This allows for better modularity,
               testability, and reusability of code.
@@ -96,7 +96,7 @@ function BlogSection2() {
               frameworks like Angular.
             </li>
             <li>
-              <strong className="text-xl">TypeScript support:</strong> NestJS is
+              <strong className="text-xl">TypeScript support:</strong> <br /> NestJS is
               built with TypeScript, which brings static typing and other modern
               language features to Node.js development. TypeScript helps catch
               errors at compile-time and provides better tooling and IDE
