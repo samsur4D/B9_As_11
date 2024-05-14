@@ -41,7 +41,7 @@ const Table = () => {
 
   return (
     <div className="container p-2 mx-auto sm:p-4 ">
-        {/* ====================================== */}
+      {/* ====================================== */}
       <form className="form-control items-center" onSubmit={handleSearchSubmit}>
         <input
           type="search"
@@ -64,7 +64,9 @@ const Table = () => {
           </colgroup>
           <thead data-aos="zoom-in-down" className="bg-gray-200 rounded-lg">
             <tr className="text-center mb-5">
-              <th className="p-3 text-md hidden lg:block">Job Title With Banner</th>
+              {/* <th className="p-3 text-md hidden lg:block">
+                Job Title With Banner
+              </th> */}
               <th className="p-3 text-md">Job Title</th>
               <th className="p-3 text-md">Category</th>
               <th className="p-3 text-md">Salary</th>
@@ -72,9 +74,8 @@ const Table = () => {
               <th className="p-3 text-md">Company</th>
               <th className="p-3 text-md">Applicants</th>
               <th className="p-3 text-md">Application Deadline</th>
-             
+
               <th className="p-3 text-md">Explore</th>
-             
             </tr>
           </thead>
           <tbody className="bg-[#f7f1e3] w-full">
@@ -97,13 +98,13 @@ const Table = () => {
                   key={job._id}
                   className="border-b border-opacity-20 dark:border-gray-300 dark:bg-gray-50"
                 >
-                  <td className="p-3 hidden lg:block">
+                  {/* <td className="p-3 hidden lg:block">
                     <img
-                      className="h-28 rounded-3xl ml-10 border border-black "
+                      className="h-28 w-40 rounded-3xl ml-10 border border-black "
                       src={job.photourl}
                       alt=""
                     />
-                  </td>
+                  </td> */}
                   <td className="p-3">
                     <p>{job.title}</p>
                   </td>
@@ -127,7 +128,12 @@ const Table = () => {
                   </td>
                   <td className="p-3">
                     {/* === */}
-                   <NavLink to={`/details/${job._id}`}> <button type="button" className="px-3 py-1 underline">View Details</button></NavLink>
+                    <NavLink to={`/details/${job._id}`}>
+                      {" "}
+                      <button type="button" className="px-3 py-1 underline">
+                        View Details
+                      </button>
+                    </NavLink>
                     {/* ===== */}
                   </td>
                 </tr>

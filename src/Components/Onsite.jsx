@@ -43,7 +43,7 @@ const Onsite = () => {
           {onsiteJobs.map((job) => (
             <div
               key={job._id}
-              className="relative bg-[#00cec9]  mt-5 rounded-3xl   flex flex-col justify-between  p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-50 dark:text-gray-800 dark:divide-gray-300"
+              className="relative bg-[#00cec9]  mt-5 rounded-3xl   flex flex-col justify-between  p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x "
             >
               <div className="p-0 md:p-1 lg:p-3 space-y-1">
                 <h3 className="text-3xl font-semibold">{job.title}</h3>

@@ -32,7 +32,7 @@ const Exstwo = () => {
             <div className="card card-compact w-full lg:w-64 bg-base-100 shadow-2xl">
   <figure><img src="https://i.ibb.co/r0QSfjW/robert-godwin-SPc-Fp-XIME6-M-unsplash.jpg" alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className="card-title text-center px-1 lg:px-5 bg-blue-400  py-2  rounded-xl">Assessments</h2>
+    <h2 className="card-title text-center -px-5  lg:px-5 bg-blue-400  py-2  rounded-xl">Assets</h2>
     <p>11 awesome fee carrer self  assessments</p>
     
   </div>
@@ -50,7 +50,7 @@ const Exstwo = () => {
 <div className="card card-compact  w-full lg:w-64 bg-base-100 shadow-2xl">
   <figure><img src="https://i.ibb.co/RSLSMLC/foto-sushi-6anudmp-ILw4-unsplash.jpg" alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className="card-title bg-yellow-400  py-2 px-5 lg:px-12 rounded-xl">Resume</h2>
+    <h2 className="card-title bg-yellow-400  py-2 -px-5 lg:px-12 rounded-xl">Resume</h2>
     <p>Resume samples </p>
     
   </div>
@@ -59,7 +59,7 @@ const Exstwo = () => {
 <div className="card card-compact  w-full lg:w-64 bg-base-100 shadow-2xl">
   <figure><img src="https://i.ibb.co/xHTpwFR/thisisengineering-TXxi-Fu-QLBKQ-unsplash.jpg" alt="Shoes" /></figure>
   <div className="card-body">
-    <h2 className="card-title bg-orange-400  py-2 px-5 lg:px-9 rounded-xl">Interview</h2>
+    <h2 className="card-title bg-orange-400   py-2 -px-8 lg:px-9 rounded-xl">Interview</h2>
     <p>100 top interview questiuons - be</p>
     
   </div>

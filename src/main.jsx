@@ -27,6 +27,8 @@ import BlogSection from './Components/BlogSection.jsx';
 import BlogSection2 from './Components/BlogSection2.jsx';
 import BlogSection3 from './Components/BlogSection3.jsx';
 import Appliedjobs from './Pages/Appliedjobs.jsx';
+import PrivateRoute from './PrivateRoute.jsx';
+import Update from './Pages/Update.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -63,7 +65,12 @@ const router = createBrowserRouter([
        },
        {
         path: "/addjob",
-        element: <Addjob></Addjob>
+        element:  <PrivateRoute>  <Addjob></Addjob> </PrivateRoute>
+       },
+       {
+        path: "/update/:id",
+        element:   <Update></Update> ,
+        loader: ({params}) => fetch(`http://localhost:5000/job/${params.id}`)
        },
        {
         path: "/alljobs",
@@ -71,7 +78,7 @@ const router = createBrowserRouter([
        },
        {
         path: "/appliedjobs",
-        element: <Appliedjobs></Appliedjobs>
+        element:   <PrivateRoute>  <Appliedjobs></Appliedjobs>  </PrivateRoute> 
        },
        {
         path: "/details/:id",
@@ -79,12 +86,12 @@ const router = createBrowserRouter([
        },
        {
         path: "/applied/:id",
-        element: <Applied></Applied>,
+        element:   <PrivateRoute>  <Applied></Applied>  </PrivateRoute> ,
        loader: ({params})=> fetch(`http://localhost:5000/job/${params.id}`)
        },
        {
         path: "/myjobs",
-        element: <Myjobs></Myjobs>,
+        element: <PrivateRoute>  <Myjobs></Myjobs>   </PrivateRoute>
        },
        {
         path: "/blogs",

@@ -33,13 +33,13 @@ export default function App() {
             p-5 rounded-2xl  "
             >
               <div className=" pl-5 py-20 lg:py-36 -mb-32 ">
-                <h1 className="text-6xl lg:text-9xl  text-white font-bold">
+                <h1 className="text-3xl lg:text-9xl  text-white font-bold">
                 Empowering dreams
                 </h1>
-                <h1 className="text-6xl lg:text-9xl text-white font-bold ">
+                <h1 className="text-3xl lg:text-9xl text-white font-bold ">
                 one job at a time.
                 </h1>
-                <h1 className="text-6xl lg:text-9xl text-white font-bold ">
+                <h1 className="text-3xl lg:text-9xl text-white font-bold ">
                   
                 </h1>
               </div>
@@ -107,13 +107,13 @@ export default function App() {
             p-5 rounded-2xl  "
             >
               <div className=" pl-5 py-20 lg:py-36 -mb-32 ">
-                <h1 className="text-6xl lg:text-9xl  text-white font-bold">
+                <h1 className="text-3xl lg:text-9xl  text-white font-bold">
                 Navigating careers,
                 </h1>
-                <h1 className="text-6xl lg:text-9xl text-white font-bold ">
+                <h1 className="text-3xl lg:text-9xl text-white font-bold ">
                 forging futures
                 </h1>
-                <h1 className="text-6xl lg:text-9xl text-white font-bold ">
+                <h1 className="text-3xl lg:text-9xl text-white font-bold ">
                   
                 </h1>
               </div>
@@ -176,13 +176,13 @@ export default function App() {
             p-5 rounded-2xl  "
             >
               <div className=" pl-5 py-20 lg:py-36 -mb-32 ">
-                <h1 className="text-6xl lg:text-9xl  text-white font-bold">
+                <h1 className="text-3xl lg:text-9xl  text-white font-bold">
                 Crafting careers,
                 </h1>
-                <h1 className="text-6xl lg:text-9xl text-white font-bold ">
+                <h1 className="text-3xl lg:text-9xl text-white font-bold ">
                 shaping destinies.
                 </h1>
-                <h1 className="text-6xl lg:text-9xl text-white font-bold ">
+                <h1 className="text-3xl lg:text-9xl text-white font-bold ">
                   
                 </h1>
               </div>
@@ -244,13 +244,13 @@ export default function App() {
             p-5 rounded-2xl  "
             >
               <div className=" pl-5 py-20 lg:py-36 -mb-32 ">
-                <h1 className="text-6xl lg:text-9xl  text-white font-bold">
+                <h1 className="text-3xl lg:text-9xl  text-white font-bold">
                 Unleashing potential, 
                 </h1>
-                <h1 className="text-6xl lg:text-9xl text-white font-bold ">
+                <h1 className="text-3xl lg:text-9xl text-white font-bold ">
                 securing futures.
                 </h1>
-                <h1 className="text-6xl lg:text-9xl text-white font-bold ">
+                <h1 className="text-3xl lg:text-9xl text-white font-bold ">
                   
                 </h1>
               </div>
