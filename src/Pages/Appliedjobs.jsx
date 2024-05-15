@@ -2,6 +2,15 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider';
 
 const Appliedjobs = () => {
+   
+    useEffect(() => {
+        document.title = 'JS/Applied_HISTORY';
+        return () => {
+          document.title = 'Title';
+        };
+      }, []);
+
+
     const {user} = useContext(AuthContext);
     const [appli , setAppli] = useState([]);
     

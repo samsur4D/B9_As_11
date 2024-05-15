@@ -6,6 +6,15 @@ import { NavLink } from 'react-router-dom';
 import HashLoader from "react-spinners/HashLoader";
 
 const Blogs = () => {
+
+    useEffect(() => {
+        document.title = 'JS/Blogs';
+        return () => {
+          document.title = 'Title';
+        };
+      }, []);
+
+
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         setTimeout( ( ) => {

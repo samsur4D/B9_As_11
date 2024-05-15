@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import logoss from "../assets/icons/logo.svg";
 import Swal from 'sweetalert2';
+import { AuthContext } from "../AuthProvider";
 
 const Form = () => {
   // const [deadline, setDeadline] = useState(new Date());
+  const {user} = useContext(AuthContext)
+  console.log(user);
 
   const handleAddJob = (e) => {
     e.preventDefault();
@@ -69,7 +72,7 @@ const Form = () => {
                 type="text"
                 name="title"
                 placeholder="Job Title"
-                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 "
+                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75   "
               />
             </div>
             <div className="col-span-full sm:col-span-3">
@@ -80,7 +83,7 @@ const Form = () => {
                 type="text"
                 name="category"
                 placeholder="Job Category"
-                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75   "
               />
             </div>
             <div className="col-span-full sm:col-span-3">
@@ -91,7 +94,7 @@ const Form = () => {
                 type="text"
                 name="company"
                 placeholder="Job Category"
-                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75   "
               />
             </div>
             <div className="col-span-full sm:col-span-3">
@@ -101,8 +104,9 @@ const Form = () => {
               <input
                 type="text"
                 name="name"
+                value={user.displayName}
                 placeholder="Name"
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75   "
               />
             </div>
             <div className="col-span-full sm:col-span-3">
@@ -113,8 +117,9 @@ const Form = () => {
               <input
                 type="email"
                 name="email"
+                value={user.email}
                 placeholder="Email"
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  "
               />
             </div>
             <div className="col-span-full">
@@ -125,7 +130,7 @@ const Form = () => {
                 type="text"
                 name="description"
                 placeholder="Description"
-                className="w-full h-16 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                className="w-full h-16 rounded-md focus:ring focus:ring-opacity-75  "
               />
             </div>
             <div className="col-span-full sm:col-span-2">
@@ -137,7 +142,7 @@ const Form = () => {
                 type="number"
                 name="salary"
                 placeholder=""
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75   "
               />
             </div>
             <div className="col-span-full sm:col-span-2">
@@ -149,7 +154,7 @@ const Form = () => {
                 type="date"
                 name="date"
                 placeholder=""
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  "
               />
             </div>
             {/* <div className="col-span-full sm:col-span-2">
