@@ -5,7 +5,7 @@ import logoss from "../assets/icons/logo.svg";
 import Swal from 'sweetalert2';
 
 const Form = () => {
-  const [deadline, setDeadline] = useState(new Date());
+  // const [deadline, setDeadline] = useState(new Date());
 
   const handleAddJob = (e) => {
     e.preventDefault();
@@ -16,6 +16,7 @@ const Form = () => {
     const name = form.name.value;
     const email = form.email.value;
     const description = form.description.value;
+    const deadline = form.deadline.value;
     const salary = form.salary.value;
     const date = form.date.value;
     const applicants = form.applicants.value;
@@ -188,12 +189,21 @@ const Form = () => {
             <div className="col-span-full">
               <label htmlFor="deadline" className="text-2xl underline text-red-600">Application Deadline</label>
               <br />
-              <DatePicker
+           {/* <DatePicker
                 selected={deadline}
                 dateFormat='yyyy/MM/dd'
                 onChange={(date) => setDeadline(date)}
                 className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600"
+              /> */}
+              <input
+                id="state"
+                type="date"
+                name="deadline"
+                placeholder=""
+                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
               />
+             
+           
             </div>
             <input
               type="submit"

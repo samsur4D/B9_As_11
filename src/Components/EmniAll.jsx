@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
 
-const Alljobs = () => {
+const EmniAll = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -46,7 +46,7 @@ const Alljobs = () => {
       {!loading && (
         <div>
           {" "}
-          {jobs.slice(0,5).map((job) => (
+          {jobs.map((job) => (
             <div
               key={job._id}
               className="relative  mt-5 rounded-3xl bg-[#dff9fb]  flex flex-col justify-between  p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-50 dark:text-gray-800 dark:divide-gray-300"
@@ -90,4 +90,4 @@ const Alljobs = () => {
   );
 };
 
-export default Alljobs;
+export default EmniAll;

@@ -29,6 +29,8 @@ import BlogSection3 from './Components/BlogSection3.jsx';
 import Appliedjobs from './Pages/Appliedjobs.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import Update from './Pages/Update.jsx';
+import Emni from './Pages/Emni.jsx';
+import EmniAll from './Components/EmniAll.jsx';
 // -----------------------------------------------------------------------
 const router = createBrowserRouter([
   {
@@ -85,6 +87,33 @@ const router = createBrowserRouter([
         element: <Details></Details>
        },
        {
+        path: "/emni",
+        element: <Emni></Emni>,
+        children: [
+          {
+            index: true ,
+            element: <EmniAll></EmniAll>
+          },
+          {
+            path: "onsite",
+            element: <Onsite></Onsite>
+          },
+          {
+            path: "remoteJobs",
+            element: <Remote></Remote>
+          },
+          {
+            path: "hybridJobs",
+            element: <Hybrid></Hybrid>
+          },
+          {
+            path: "partTimejobs",
+            element: <Part></Part>
+          },
+          
+        ]
+       },
+       {
         path: "/applied/:id",
         element:   <PrivateRoute>  <Applied></Applied>  </PrivateRoute> ,
        loader: ({params})=> fetch(`http://localhost:5000/job/${params.id}`)
@@ -93,6 +122,10 @@ const router = createBrowserRouter([
         path: "/myjobs",
         element: <PrivateRoute>  <Myjobs></Myjobs>   </PrivateRoute>
        },
+      //  {
+      //    path: "/emniall",
+      //    element: <EmniAll></EmniAll>
+      //  },
        {
         path: "/blogs",
         element: <Blogs></Blogs>

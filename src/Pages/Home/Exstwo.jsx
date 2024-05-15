@@ -5,7 +5,7 @@ import { fadeIn }  from '../../Variants/Variantone'
 
 const Exstwo = () => {
     return (
-    <div className='mt-32'>
+    <div className='mt-32 mb-60'>
 
   <motion.div
   

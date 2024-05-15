@@ -1,50 +1,197 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import logo from '../assets/images/one (1).jfif'
+import logos from '../assets/images/one (2).jfif'
+import { useLoaderData, useParams } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider';
+import Swal from 'sweetalert2';
+const Applied = () => {
+  const [currentDate, setCurrentDate] = useState('');
+  const {user} = useContext(AuthContext)
+  console.log(user);
+  // -------------------------
+  useEffect(() => {
+    // Function to get the current date in the format yyyy-mm-dd
+    const getCurrentDate = () => {
+      const now = new Date();
+      const year = now.getFullYear();
+      let month = now.getMonth() + 1;
+      let day = now.getDate();
 
-const Onsite = () => {
+      // Add leading zero if month or day is less than 10
+      if (month < 10) {
+        month = '0' + month;
+      }
+      if (day < 10) {
+        day = '0' + day;
+      }
 
-const [jobs,setJobs] = useState([])
+      return `${year}-${month}-${day}`;
+    };
 
-useEffect(() => {
-	fetch("http://localhost:5000/job")
-	  .then((res) => res.json())
-	  .then((data) => {
-		
-		// setJobs(data);
-		console.log(data);
-	  });
+    setCurrentDate(getCurrentDate());
   }, []);
-
+  // ----------------------
+ 
+    const jobone = useLoaderData();
+     const {title , _id , category , company ,name , email , salary ,  date ,applicants ,deadline} = jobone
+     
+    const handelApply = (event) =>{
+        event.preventDefault();
+        const form = event.target ;
+        const name = form.name.value;
+        const email = form.email.value;
+        const message = form.message.value;
+        const resume = form.resume.value;
+        const today = form.today.value;
+        const applyInfo = {
+          applyPerson: name,
+                     email,
+                     message,
+                     today,
+                     resume,
+                     title: title,
+                     category: category,
+                     company:company,
+                     date:date,
+                     deadline:deadline
+                     
+        }
+        console.log(applyInfo);
+  
+               if( user.email ===  jobone.email){
+                Swal.fire({
+                  icon: "error",
+                  title: "Oops...",
+                  text: "Sorry!You Can't Apply to This Job",
+                  footer: '<a href="#">Because, this is your posted job</a>'
+                });
+               }else{
+                fetch('http://localhost:5000/applys' , {
+                  method: 'POST',
+                  headers: {
+                    'content-type' : 'application/json'
+                  },
+                  body: JSON.stringify(applyInfo)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if(data.insertedId){
+                      Swal.fire({
+                        icon: "success",
+                        title: "Application Completed",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                    }
+                })
+        
+               }
+    }
 
 
     return (
-        <div className='mt-5 '>
-        <h1 className='text-xl'> <span className='text-4xl text-orange-500 font-bold'>Only on-site jobs</span> are listed below</h1>
-      {/*  */}
-	  <div className="relative  mt-5 rounded-3xl bg-gray-300  flex flex-col justify-between  p-6 divide-y xl:flex-row xl:divide-y-0 xl:divide-x dark:bg-gray-50 dark:text-gray-800 dark:divide-gray-300">
-	<div className="p-0 md:p-1 lg:p-3 space-y-1">
-		<h3 className="text-3xl font-semibold">Job Title</h3>
-		<h3 className="text-md font-semibold">salary range</h3>
-		<h3 className="text-md font-semibold">Job Posting Date</h3>
-		<h3 className="text-md font-semibold">Applicants Number</h3>
-		
-	</div>
-	<div className="flex items-center  gap-3 p-3">
-		
-		<div className=" space-y-1 ml-0 md:ml-24 lg:ml-0">
-			<div className='flex flex-col'>
-            <span className="text-lg font-semibold">Job is posted by <span className='underline'>samsur rahman</span></span>
-            <span className="text-2xl font-semibold">Job Posting Date : April 03, 2021</span>
-			<span className="text-2xl text-red-500 font-bold underline">Application Deadline : April 03, 2021</span>
+        <section data-aos="zoom-in-down" className="p-6 bg-gray-200  rounded-lg mb-5  ">
+          
+        <h1 data-aos="fade-up" className="ml-0 lg:ml-40 font-bold text-4xl mb-3 md:mb-4 lg:mb-5 underline">Apply to the Job  : {title}</h1>
+        <h2 className='mb-4 lg:ml-20'>This Job Is posted from this email : - <span className='text-lg underline font-semibold'>{email}</span></h2>
+        <div className='flex items-center justify-center gap-24 lg:ml-40'>
+          <p className='text-blue-500 underline'>Posting Date : {date}</p>
+          <p className='text-red-500 underline animate-pulse'>Application Deadline : {deadline}</p>
+        </div>
+      <form
+        onSubmit={handelApply}
+        noValidate=""
+        action=""
+        className="container flex flex-col mx-auto space-y-12"
+      >
+        <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shad">
+          <div className="space-y-2 col-span-full lg:col-span-1">
+           
+            <img src={logo} className="mt-5" alt="" />
+            <img src={logos} className="mt-5" alt="" />
+          </div>
+          <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+           
+           
+            <div className="col-span-full sm:col-span-3">
+              <label htmlFor="email" className="text-sm">
+                Full Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                defaultValue={user.displayName}
+                placeholder="Full Name"
+                className="w-full h-16 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+              />
             </div>
-		</div>
+            <div className="col-span-full sm:col-span-3">
+              <label htmlFor="email" className="text-sm">
+                {" "}
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+               defaultValue={user.email}
+                placeholder="Email"
+                className="w-full h-16 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+              />
+            </div>
+            <div className="col-span-full sm:col-span-3">
+              <label htmlFor="today" className="text-sm">
+                {" "}
+                Today's Date :  
+              </label>
+               <input
+             type=""
+        name="today"
+        defaultValue={currentDate}
+        placeholder={currentDate}
+        className="w-36 h-16 ml-2 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600"
+      />
+            </div>
+            <div>
       
-	</div>
-	<button className=' px-4 py-4 md:px-4 md:py-4 lg:px-2 lg:py-0 underline text-blue-600 font-semibold  rounded-2xl'>View Details</button>
-    
-                        </div>
-	  {/*  */}
     </div>
+         
+            <div className="col-span-full">
+              <label htmlFor="address" className="text-sm">
+                Short Message
+              </label>
+              <input
+                type="text"
+                name="message"
+                placeholder="Give your short message here !"
+                className="w-full h-32 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+              />
+            </div>
+           
+           
+            <div className="col-span-full">
+              <label htmlFor="bio" className="text-sm">
+              Your Resume Link
+              </label>
+              <input
+                type="url"
+                name="resume"
+                placeholder=""
+                className="w-full rounded-md focus:ring focus:ring-opacity-75 h-12 focus:dark:ring-violet-600 "
+              ></input>
+            </div>
+            
+            
+            <input className="btn px-12  btn-block bg-blue-400" type="submit" value="Apply" />
+            {/* --------- */}
+            
+          </div>
+          
+        </fieldset>
+       
+      </form>
+    </section>
     );
 };
 
-export default Onsite;
+export default Applied;

@@ -9,7 +9,7 @@ const [tabIndex , setTabIndex] = useState(0)
 
   return (
     <>
-    <div data-aos="zoom-out-up" className=" grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 mt-60 items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap   ">
+    <div data-aos="zoom-out-up" className=" grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 mt-28 items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap   ">
     <NavLink 
       to=""
       onClick={() => setTabIndex(0)}

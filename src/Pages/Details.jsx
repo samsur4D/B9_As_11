@@ -15,7 +15,7 @@ const Details = () => {
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);
-        console.log(data);
+        // console.log(data);
       });
   }, []);
 

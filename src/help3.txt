@@ -1,231 +1,197 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import logo from '../assets/images/one (1).jfif'
+import logos from '../assets/images/one (2).jfif'
+import { useLoaderData, useParams } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider';
 import Swal from 'sweetalert2';
-import DatePicker from "react-datepicker";
-import { useLoaderData  } from 'react-router-dom';
+const Applied = () => {
+  const [currentDate, setCurrentDate] = useState('');
+  const {user} = useContext(AuthContext)
+  console.log(user);
+  // -------------------------
+  useEffect(() => {
+    // Function to get the current date in the format yyyy-mm-dd
+    const getCurrentDate = () => {
+      const now = new Date();
+      const year = now.getFullYear();
+      let month = now.getMonth() + 1;
+      let day = now.getDate();
 
-const Update = () => {
-    const [deadline, setDeadline] = useState(new Date());
-    const [jobi,setJobi] = useState([])
+      // Add leading zero if month or day is less than 10
+      if (month < 10) {
+        month = '0' + month;
+      }
+      if (day < 10) {
+        day = '0' + day;
+      }
 
-      const newJob = useLoaderData();
-    //   console.log(newJob);
-     const {title , _id , category , company ,name , email , salary ,  date ,applicants } = newJob
-    
+      return `${year}-${month}-${day}`;
+    };
 
-
-
-    // -----------------------------
-    const handleUpdate = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const title = form.title.value;
-        const category = form.category.value;
-        const company = form.company.value;
+    setCurrentDate(getCurrentDate());
+  }, []);
+  // ----------------------
+ 
+    const jobone = useLoaderData();
+     const {title , _id , category , company ,name , email , salary ,  date ,applicants ,deadline} = jobone
+     
+    const handelApply = (event) =>{
+        event.preventDefault();
+        const form = event.target ;
         const name = form.name.value;
         const email = form.email.value;
-        const description = form.description.value;
-        const salary = form.salary.value;
-        const date = form.date.value;
-        const applicants = form.applicants.value;
-        const photourl = form.photourl.value;
-    
-        const updatejob = { title, category, company, name, email, description, salary, date, applicants, photourl, deadline }
-        console.log(updatejob);
-        //    send data to the server
-        fetch(`http://localhost:5000/update/${_id}` , {
-            method: 'PUT',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body: JSON.stringify(updatejob)
-        })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data);
-            if (data.modifiedCount > 0) {
-              Swal.fire({
-                icon: "success",
-                title: "Your Job is Updated Now",
-                showConfirmButton: false,
-                timer: 1500
-              });
-              setJobi(updatejob)
-            }
-          })
-      }
-    // ------------------------------
+        const message = form.message.value;
+        const resume = form.resume.value;
+        const today = form.today.value;
+        const applyInfo = {
+          applyPerson: name,
+                     email,
+                     message,
+                     today,
+                     resume,
+                     title: title,
+                     category: category,
+                     company:company,
+                     date:date,
+                     deadline:deadline
+                     
+        }
+        console.log(applyInfo);
+  
+               if( user.email ===  jobone.email){
+                Swal.fire({
+                  icon: "error",
+                  title: "Oops...",
+                  text: "Sorry!You Can't Apply to This Job",
+                  footer: '<a href="#">Because, this is your posted job</a>'
+                });
+               }else{
+                fetch('http://localhost:5000/applys' , {
+                  method: 'POST',
+                  headers: {
+                    'content-type' : 'application/json'
+                  },
+                  body: JSON.stringify(applyInfo)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if(data.insertedId){
+                      Swal.fire({
+                        icon: "success",
+                        title: "Application Completed",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                    }
+                })
+        
+               }
+    }
+
+
     return (
-        <div>
-           <section className="p-6 bg-gray-300 rounded-lg mb-5">
-      <h1 data-aos="fade-up" className="ml-0 lg:ml-40 font-bold text-4xl mb-3 md:mb-4 lg:mb-5 underline">Edit Your Job in Our Territory </h1>
+        <section data-aos="zoom-in-down" className="p-6 bg-gray-200  rounded-lg mb-5  ">
+          
+        <h1 data-aos="fade-up" className="ml-0 lg:ml-40 font-bold text-4xl mb-3 md:mb-4 lg:mb-5 underline">Apply to the Job  : {title}</h1>
+        <h2 className='mb-4 lg:ml-20'>This Job Is posted from this email : - <span className='text-lg underline font-semibold'>{email}</span></h2>
+        <div className='flex items-center justify-center gap-24 lg:ml-40'>
+          <p className='text-blue-500 underline'>Posting Date : {date}</p>
+          <p className='text-red-500 underline animate-pulse'>Application Deadline : {deadline}</p>
+        </div>
       <form
-        onSubmit={handleUpdate}
+        onSubmit={handelApply}
         noValidate=""
         action=""
         className="container flex flex-col mx-auto space-y-12"
       >
         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shad">
           <div className="space-y-2 col-span-full lg:col-span-1">
-            <img src="" className="mt-5" alt="" />
+           
+            <img src={logo} className="mt-5" alt="" />
+            <img src={logos} className="mt-5" alt="" />
           </div>
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-          <div className="col-span-full sm:col-span-3">
-              <label htmlFor="firstname" className="text-sm">
-                Job Title
-              </label>
-              <input
-                type="text"
-                name="title"
-                defaultValue={title}
-                placeholder="Job Title"
-                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 "
-              />
-            </div>
-            <div className="col-span-full sm:col-span-3">
-              <label htmlFor="lastname" className="text-sm">
-                Job Category
-              </label>
-              <input
-                type="text"
-                name="category"
-                defaultValue={category}
-                placeholder="Job Category"
-                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
-              />
-            </div>
-            <div className="col-span-full sm:col-span-3">
-              <label htmlFor="lastname" className="text-sm">
-                Company NAme
-              </label>
-              <input
-                type="text"
-                name="company"
-                defaultValue={company}
-                placeholder=""
-                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
-              />
-            </div>
+           
+           
             <div className="col-span-full sm:col-span-3">
               <label htmlFor="email" className="text-sm">
-                User Name
+                Full Name
               </label>
               <input
                 type="text"
                 name="name"
-                defaultValue={name}
-                placeholder="Name"
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                defaultValue={user.displayName}
+                placeholder="Full Name"
+                className="w-full h-16 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
               />
             </div>
             <div className="col-span-full sm:col-span-3">
               <label htmlFor="email" className="text-sm">
                 {" "}
-                UserEmail
+                Email
               </label>
               <input
                 type="email"
                 name="email"
-                defaultValue={email}
+               defaultValue={user.email}
                 placeholder="Email"
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
-              />
-            </div>
-            <div className="col-span-full">
-              <label htmlFor="address" className="text-sm">
-                Job Description
-              </label>
-              <input
-                type="text"
-                name="description"
-                
-                placeholder="Description"
                 className="w-full h-16 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
               />
             </div>
-            <div className="col-span-full sm:col-span-2">
-              <label htmlFor="city" className="text-sm">
-                Salary Range
+            <div className="col-span-full sm:col-span-3">
+              <label htmlFor="today" className="text-sm">
+                {" "}
+                Today's Date :  
+              </label>
+               <input
+             type=""
+        name="today"
+        defaultValue={currentDate}
+        placeholder={currentDate}
+        className="w-36 h-16 ml-2 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600"
+      />
+            </div>
+            <div>
+      
+    </div>
+         
+            <div className="col-span-full">
+              <label htmlFor="address" className="text-sm">
+                Short Message
               </label>
               <input
-                id="city"
-                type="number"
-                name="salary"
-                defaultValue={salary}
-                placeholder=""
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
+                type="text"
+                name="message"
+                placeholder="Give your short message here !"
+                className="w-full h-32 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
               />
             </div>
-            <div className="col-span-full sm:col-span-2">
-              <label htmlFor="state" className="text-sm">
-                Posting Date
-              </label>
-              <input
-                id="state"
-                type="date"
-                name="date"
-                defaultValue={date}
-                placeholder=""
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
-              />
-            </div>
-            <div className="col-span-full sm:col-span-2">
-              <label htmlFor="zip" className="text-sm">
-                Applicants Number
-              </label>
-              <input
-                id="zip"
-                type="number"
-                name="applicants"
-                defaultValue={applicants}
-                placeholder=""
-                className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
-              />
-            </div>
+           
+           
             <div className="col-span-full">
               <label htmlFor="bio" className="text-sm">
-                Picture Url Of the Job Banner
+              Your Resume Link
               </label>
               <input
                 type="url"
-                name="photourl"
+                name="resume"
                 placeholder=""
                 className="w-full rounded-md focus:ring focus:ring-opacity-75 h-12 focus:dark:ring-violet-600 "
               ></input>
             </div>
+            
+            
+            <input className="btn px-12  btn-block bg-blue-400" type="submit" value="Apply" />
             {/* --------- */}
+            
           </div>
+          
         </fieldset>
-     
-        <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm">
-          <div className="space-y-2 col-span-full lg:col-span-1">
-            <p className="text-2xl font-bold">Job Seeker</p>
-            <p className="text-xl text-red-700 animate-pulse">
-              {/* "Where careers take flight" */}
-            </p>
-          </div>
-          <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-            <div className="col-span-full">
-              <label htmlFor="deadline" className="text-2xl underline text-red-600">Application Deadline</label>
-              <br />
-              <DatePicker
-                selected={deadline}
-                dateFormat='yyyy/MM/dd'
-                defaultValue={deadline}
-                onChange={(date) => setDeadline(date)}
-                className="w-full h-10 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600"
-              />
-            </div>
-            <input
-              type="submit"
-              value="Update"
-              className="w-full bg-black px-20 lg:px-96 py-3 text-white font-bold rounded-xl"
-            />
-          </div>
-        </fieldset>
+       
       </form>
     </section>
-        </div>
     );
 };
 
-export default Update;
+export default Applied;

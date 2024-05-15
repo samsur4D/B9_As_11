@@ -5,6 +5,7 @@ import logo from "../assets/icons/logo.svg";
 
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
   const [theme , setTheme] = useState('light');
   useEffect(()=>{
     localStorage.setItem('theme',theme)
