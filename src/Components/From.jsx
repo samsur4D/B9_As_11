@@ -19,7 +19,7 @@ const Form = () => {
     const deadline = form.deadline.value;
     const salary = form.salary.value;
     const date = form.date.value;
-    const applicants = form.applicants.value;
+    const applicants = 0;
     const photourl = form.photourl.value;
 
     const newJob = { title, category, company, name, email, description, salary, date, applicants, photourl, deadline }
@@ -35,6 +35,7 @@ const Form = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
+        form.reset();
         if (data.insertedId) {
           Swal.fire({
             icon: "success",
@@ -151,18 +152,19 @@ const Form = () => {
                 className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
               />
             </div>
-            <div className="col-span-full sm:col-span-2">
+            {/* <div className="col-span-full sm:col-span-2">
               <label htmlFor="zip" className="text-sm">
                 Applicants Number
               </label>
               <input
                 id="zip"
                 type="number"
+                value={applicants}
                 name="applicants"
                 placeholder=""
                 className="w-full h-8 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 "
               />
-            </div>
+            </div> */}
             <div className="col-span-full">
               <label htmlFor="bio" className="text-sm">
                 Picture Url Of the Job Banner

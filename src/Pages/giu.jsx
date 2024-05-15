@@ -1,4 +1,4 @@
-import  { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import logo from '../assets/images/one (1).jfif';
 import logos from '../assets/images/one (2).jfif';
 import { useLoaderData } from 'react-router-dom';
@@ -7,10 +7,9 @@ import Swal from 'sweetalert2';
 
 const Applied = () => {
     const [currentDate, setCurrentDate] = useState('');
-   
+    const [numApplicants, setNumApplicants] = useState(0); // State variable to keep track of number of applicants
     const { user } = useContext(AuthContext);
-    
-    
+
     useEffect(() => {
         const getCurrentDate = () => {
             const now = new Date();
@@ -31,15 +30,15 @@ const Applied = () => {
         setCurrentDate(getCurrentDate());
     }, []);
 
-     const jobone = useLoaderData();
-     const { title, _id, category, company, name, email, salary, date, applicants, deadline } = jobone;    
+    const jobone = useLoaderData();
+    const { title, _id, category, company, name, email, salary, date, applicants, deadline } = jobone;
 
     const handelApply = (event) => {
         event.preventDefault();
-        
+
         const currentDate = new Date();
         const deadlineDate = new Date(deadline);
- 
+
         if (currentDate <= deadlineDate) {
             const form = event.target;
             const name = form.name.value;
@@ -51,7 +50,6 @@ const Applied = () => {
             const applyInfo = {
                 applyPerson: name,
                 email,
-                id: _id,
                 message,
                 today,
                 resume,
@@ -81,9 +79,8 @@ const Applied = () => {
                     .then(data => {
                         console.log(data)
                         if (data.insertedId) {
-                       
-                        
-                       
+                            // Update number of applicants locally
+                            setNumApplicants(prevApplicants => prevApplicants + 1);
                             Swal.fire({
                                 icon: "success",
                                 title: "Application Completed",
@@ -106,9 +103,8 @@ const Applied = () => {
 
     return (
         <section data-aos="zoom-in-down" className="p-6 bg-gray-200 rounded-lg mb-5">
-          
-            <h1 data-aos="fade-up" className="ml-0 lg:ml-40 font-bold text-2xl mb-3 md:mb-4 lg:mb-5 underline">Apply to the Job : -<br /> <span className='text-5xl'> {title} </span></h1>
-            <h2 className='mb-4 lg:ml-20'>This Job Is posted from this email : - <span className='text-xl underline font-semibold'>{email}</span></h2>
+            <h1 data-aos="fade-up" className="ml-0 lg:ml-40 font-bold text-4xl mb-3 md:mb-4 lg:mb-5 underline">Apply to the Job : {title}</h1>
+            <h2 className='mb-4 lg:ml-20'>This Job Is posted from this email : - <span className='text-lg underline font-semibold'>{email}</span></h2>
             <div className='flex items-center justify-center gap-24 lg:ml-40'>
                 <p className='text-blue-500 underline'>Posting Date : {date}</p>
                 <p className='text-red-500 underline animate-pulse'>Application Deadline : {deadline}</p>
@@ -135,55 +131,17 @@ const Applied = () => {
                                 className="w-full h-16 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600"
                             />
                         </div>
-                        <div className="col-span-full sm:col-span-3">
-                            <label htmlFor="email" className="text-sm">Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                defaultValue={user.email}
-                                placeholder="Email"
-                                className="w-full h-16 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600"
-                            />
-                        </div>
-                        <div className="col-span-full sm:col-span-3">
-                            <label htmlFor="today" className="text-sm">Today's Date :</label>
-                            <input
-                                type=""
-                                name="today"
-                                defaultValue={currentDate}
-                                placeholder={currentDate}
-                                className="w-36 h-16 ml-2 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600"
-                            />
-                        </div>
+                        {/* Other input fields */}
                         <div className="col-span-full sm:col-span-3">
                             <label htmlFor="today" className="text-sm">Total Applicants :</label>
                             <input
                                 type=""
                                 name="applicants"
-                                
-                                 value={applicants}
-                               
+                                value={`${numApplicants} --People`}
                                 className="w-36 h-16 ml-2 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600"
                             />
                         </div>
-                        <div className="col-span-full">
-                            <label htmlFor="address" className="text-sm">Short Message</label>
-                            <input
-                                type="text"
-                                name="message"
-                                placeholder="Give your short message here !"
-                                className="w-full h-32 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600"
-                            />
-                        </div>
-                        <div className="col-span-full">
-                            <label htmlFor="bio" className="text-sm">Your Resume Link</label>
-                            <input
-                                type="url"
-                                name="resume"
-                                placeholder=""
-                                className="w-full rounded-md focus:ring focus:ring-opacity-75 h-12 focus:dark:ring-violet-600"
-                            ></input>
-                        </div>
+                        {/* Other input fields */}
                         <input className="btn px-12 btn-block bg-blue-400" type="submit" value="Apply" />
                     </div>
                 </fieldset>

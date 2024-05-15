@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import DatePicker from "react-datepicker";
 import { useLoaderData  } from 'react-router-dom';
+import logo from '../assets/icons/logo.svg'
 
 const Update = () => {
     const [deadline, setDeadline] = useState(new Date());
@@ -67,7 +68,7 @@ const Update = () => {
       >
         <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shad">
           <div className="space-y-2 col-span-full lg:col-span-1">
-            <img src="" className="mt-5" alt="" />
+            <img src={logo} className="mt-5" alt="" />
           </div>
           <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
           <div className="col-span-full sm:col-span-3">

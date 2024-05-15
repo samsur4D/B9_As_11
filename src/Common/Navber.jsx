@@ -6,25 +6,22 @@ import logo from "../assets/icons/logo.svg";
 const Navber = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
-  const [theme , setTheme] = useState('light');
-  useEffect(()=>{
-    localStorage.setItem('theme',theme)
-    
-      
-      const localTheme = localStorage.getItem('theme')
-     
-      
-      document.querySelector('html').setAttribute('data-theme', localTheme)
-      
-  },[theme])
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+
+    const localTheme = localStorage.getItem("theme");
+
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
   // console.log(user);
-  const handelTheme = (e) =>{
-      if(e.target.checked){
-        setTheme('retro')
-      }else{
-        setTheme('light')
-      }
-  }
+  const handelTheme = (e) => {
+    if (e.target.checked) {
+      setTheme("retro");
+    } else {
+      setTheme("light");
+    }
+  };
   // console.log(theme);
   return (
     <div className="navbar  shadow-2xl mb-3 rounded-lg bg-gray-200 ">
@@ -68,11 +65,9 @@ const Navber = () => {
             <NavLink to="/blogs">
               <a>Blogs</a>
             </NavLink>
-            <NavLink >
-              <button  onClick={() => logOut()}>Logout</button>
+            <NavLink>
+              <button onClick={() => logOut()}>Logout</button>
             </NavLink>
-
-         
           </ul>
         </div>
 
@@ -101,46 +96,56 @@ const Navber = () => {
             All Jobs
           </NavLink>
           {/* -------------------------------------- */}
-          <NavLink
-            to="/appliedjobs"
-            href="#_"
-            className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
-          >
-            Applied Jobs
-          </NavLink>
+          {user && (
+            <NavLink
+              to="/appliedjobs"
+              href="#_"
+              className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
+            >
+              Applied Jobs
+            </NavLink>
+          )}
+
           {/* --------------------------------- */}
+          {user && (
+            <NavLink
+              to="/addjob"
+              href="#_"
+              className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
+            >
+              Add Job
+            </NavLink>
+          )}
+
+          {/* -------------------------------------- */}
+          {user && (
+            <NavLink
+              to="/myjobs"
+              href="#_"
+              className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
+            >
+              My Jobs
+            </NavLink>
+          )}
+
+          {/* ------------------------------------ */}
 
           <NavLink
-            to="/addjob"
-            href="#_"
-            className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
-          >
-            Add Job
-          </NavLink>
-          {/* -------------------------------------- */}
-          <NavLink
-            to="/myjobs"
-            href="#_"
-            className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
-          >
-            My Jobs
-          </NavLink>
-           {/* ------------------------------------ */}
-           <NavLink
             to="/blogs"
             href="#_"
             className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-black rounded-lg text-sm"
           >
-           Blogs
+            Blogs
           </NavLink>
           {/* ----------------------------------- */}
         </ul>
       </div>
+
       <div className="navbar-end flex gap-3">
         {/* ------------------------------------------------ */}
         <label className="cursor-pointer grid place-items-center">
           <input
-          onChange={handelTheme}
+            onChange={handelTheme}
             type="checkbox"
             className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
           />
@@ -191,9 +196,8 @@ const Navber = () => {
             <span className="relative transition-colors duration-300 delay-200 group-hover:text-white ease">
               Log!N
             </span>
-          </NavLink>   
+          </NavLink>
         )}
-
 
         {/* ------------------------------------------------ */}
         {user ? (
@@ -214,8 +218,6 @@ const Navber = () => {
             </span>
           </NavLink>
         )}
-
-
 
         {/* ------------------------------------------------------ */}
         {user ? (
