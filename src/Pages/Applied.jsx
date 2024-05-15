@@ -70,7 +70,7 @@ const Applied = () => {
                     footer: '<a href="#">Because, this is your posted job</a>'
                 });
             } else {
-                fetch('http://localhost:5000/applys', {
+                fetch('https://b11-assignment-server.vercel.app/applys', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -80,6 +80,7 @@ const Applied = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
+                        form.reset();
                         if (data.insertedId) {
                        
                         

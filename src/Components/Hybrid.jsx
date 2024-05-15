@@ -16,7 +16,7 @@ useEffect(() => {
    }, [ ] )
 
 	useEffect(() => {
-		fetch("http://localhost:5000/job")
+		fetch("https://b11-assignment-server.vercel.app/job")
 		  .then((res) => res.json())
 		  .then((data) => {
 		const hybridJobsData = data.filter(job => job.category === 'Hybrid')

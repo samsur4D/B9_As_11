@@ -11,7 +11,7 @@ const Details = () => {
   console.log(singleData);
 
   useEffect(() => {
-    fetch("http://localhost:5000/job")
+    fetch("https://b11-assignment-server.vercel.app/job")
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);

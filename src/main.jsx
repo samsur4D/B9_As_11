@@ -72,7 +72,7 @@ const router = createBrowserRouter([
        {
         path: "/update/:id",
         element:   <Update></Update> ,
-        loader: ({params}) => fetch(`http://localhost:5000/job/${params.id}`)
+        loader: ({params}) => fetch(`https://b11-assignment-server.vercel.app/job/${params.id}`)
        },
        {
         path: "/alljobs",
@@ -116,16 +116,12 @@ const router = createBrowserRouter([
        {
         path: "/applied/:id",
         element:   <PrivateRoute>  <Applied></Applied>  </PrivateRoute> ,
-       loader: ({params})=> fetch(`http://localhost:5000/job/${params.id}`)
+       loader: ({params})=> fetch(`https://b11-assignment-server.vercel.app/job/${params.id}`)
        },
        {
         path: "/myjobs",
         element: <PrivateRoute>  <Myjobs></Myjobs>   </PrivateRoute>
        },
-      //  {
-      //    path: "/emniall",
-      //    element: <EmniAll></EmniAll>
-      //  },
        {
         path: "/blogs",
         element: <Blogs></Blogs>

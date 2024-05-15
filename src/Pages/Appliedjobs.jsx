@@ -1,19 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider';
 
 const Appliedjobs = () => {
     const {user} = useContext(AuthContext);
     const [appli , setAppli] = useState([]);
+    
 
-    const url = `http://localhost:5000/applys?email=${user?.email}`
+    const url = `https://b11-assignment-server.vercel.app/applys?email=${user?.email}`
 
 
     useEffect(()=>{
          fetch(url)
          .then(res => res.json())
          .then(data => {
-            setAppli(data)
-            console.log(data);
+            const newData = data.filter((item)=> item.email === user.email)
+             setAppli(newData)
+             console.log(newData);
          })
         
     },[])
@@ -24,8 +26,8 @@ const Appliedjobs = () => {
             {
                 appli.map(applione=>(
                     <section key={applione._id} className=" py-5 lg:px-72 bg-[#bdc3c7] shadow-xl mb-10 mt-10">
-                        
-                    <h1 className='text-3xl font-bold underline '>My Application Include My Resume </h1>
+                       
+                    <h1 className='text-3xl font-bold underline '>My Application Include My Resume k </h1>
         <div className="container max-w-6xl  p-6 mx-auto space-y-6 sm:space-y-12">
             <a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
                 <img src={applione.resume} alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 mt-5" />

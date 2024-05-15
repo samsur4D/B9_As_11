@@ -25,7 +25,7 @@ const Form = () => {
     const newJob = { title, category, company, name, email, description, salary, date, applicants, photourl, deadline }
     console.log(newJob);
     //    send data to the server
-    fetch('http://localhost:5000/job', {
+    fetch('https://b11-assignment-server.vercel.app/job', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

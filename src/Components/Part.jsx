@@ -7,7 +7,7 @@ const Part = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/job")
+    fetch("https://b11-assignment-server.vercel.app/job")
       .then((res) => res.json())
       .then((data) => {
         const partJobsData = data.filter((job) => job.category === "Part-Time");

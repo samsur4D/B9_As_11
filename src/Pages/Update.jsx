@@ -34,7 +34,7 @@ const Update = () => {
         const updatejob = { title, category, company, name, email, description, salary, date, applicants, photourl, deadline }
         console.log(updatejob);
         //    send data to the server
-        fetch(`http://localhost:5000/job/${_id}` , {
+        fetch(`https://b11-assignment-server.vercel.app/job/${_id}` , {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
