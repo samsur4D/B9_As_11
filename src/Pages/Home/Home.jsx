@@ -7,6 +7,7 @@ import Tabss from "./Tabss/Tabss";
 import Exsfour from "./Exsfour";
 import 'animate.css';
 import { NavLink } from "react-router-dom";
+import NewTask from "./NewTask";
 
 const Home = () => {
   useEffect(() => {
@@ -37,6 +38,8 @@ const Home = () => {
     </div> */}
 
       <Exsone></Exsone>
+
+      <NewTask></NewTask>
 
       <Exsthree></Exsthree>
 

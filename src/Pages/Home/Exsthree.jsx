@@ -6,7 +6,7 @@ import four from '../../assets/images/one (4).jfif'
 
 const Exsthree = () => {
     return (
-        <div className='mt-24 mb-24'>
+        <div className='new-task mt-24 mb-24'>
                {/* div 1 */}
                <div data-aos="zoom-in" className='flex items-center justify-center gap-3'>
                     <div >  <img className='w-96 rounded-2xl' src={one} alt="" /></div>
