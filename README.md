@@ -92,4 +92,27 @@ Visit our website: [Job Seeker](https://your-job-seeker-website-url.com)
 
 Start your job search journey with Job Seeker! Begin exploring now.
 
+____________________________________________________________________________________________
 
+## Installation
+
+1. Clone the repository:
+
+```
+git clone https://github.com/samsur4D/B9_As_11.git
+```
+
+2. Navigate to the project directory:
+   ```
+   cd B9_As_11
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Configure environment variables (e.g., Firebase URI, Stripe API keys) in a `.env` file.
+5. Start the development server:
+
+```
+npm run dev
+```
